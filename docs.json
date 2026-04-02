@@ -3,9 +3,9 @@
   "theme": "maple",
   "name": "onetoken docs",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#2a56dd",
+    "light": "#2a56dd",
+    "dark": "#2a56dd"
   },
   "favicon": "/favicon.png",
   "navigation": {
@@ -114,7 +114,10 @@
               "zh/editor/Cursor",
               "zh/editor/OpenCode",
               "zh/editor/OpenClaw",
-              "zh/editor/OpenAICodex"
+              "zh/editor/OpenAICodex",
+              "zh/editor/QwenCode",
+              "zh/editor/VoidEditor",
+              "zh/editor/Clawx"
             ]
           }
         ]
@@ -129,13 +132,7 @@
   "contextual": {
     "options": [
       "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
+      "view"
     ]
   },
   "footer": {

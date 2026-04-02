@@ -1,4 +1,9 @@
-# Void Editor 配置第三方 API 教程
+---
+title: Void Editor
+icon: code
+---
+
+## Void Editor 配置第三方 API 教程
 
 Void Editor 作为一款开源、隐私优先的 AI 代码编辑器（Cursor 的开源替代品），支持用户直接连接到第三方 API。通过这种方式，你可以使用 **DeepSeek、OpenRouter、OneAPI** 或者任何兼容 OpenAI 接口协议的服务商。
 
@@ -35,9 +40,14 @@ Void Editor 作为一款开源、隐私优先的 AI 代码编辑器（Cursor 的
    - 粘贴你的服务商地址。注意：通常需要以 `/v1` 结尾。
 4. **填入 API Key**：
    - 在 `API Key` 字段输入你的密钥。
+
+<img src="/images/void/1.png" />
+
 5. **添加模型 (Models)**：
    - 找到模型列表区域，点击 **Add Model**。
    - 输入模型在 API 里的真实 ID（如 `deepseek-reasoner` 或 `claude-3-5-sonnet`）。
+
+<img src="/images/void/2.png" />
 
 ---
 

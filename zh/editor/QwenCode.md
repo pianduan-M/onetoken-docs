@@ -1,4 +1,7 @@
-# Qwen Code
+---
+title: Qwen Code
+icon: code
+---
 
 > 利用 Onetoken 平台的任何大语言模型为 Qwen Code 提供支持。
 
