@@ -1,0 +1,13 @@
+{
+  "name": "onetoken",
+  "navigation": [
+    {
+      "group": "Basics",
+      "pages": [
+        "basics/introduction",
+        "basics/quickstart",
+        "basics/t2v"
+      ]
+    }
+  ]
+}

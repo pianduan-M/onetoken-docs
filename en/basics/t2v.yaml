@@ -1,0 +1,208 @@
+openapi: 3.0.1
+info:
+  title: ""
+  version: 1.0.0
+paths:
+  /v1/video/generations:
+    post:
+      summary: 创建文生视频生成任务
+      deprecated: false
+      description: ""
+      tags:
+        - 视频模型（new）/海螺视频生成
+      parameters:
+        - name: Authorization
+          in: header
+          description: ""
+          required: false
+          example: Bearer {{YOUR_API_KEY}}
+          schema:
+            type: string
+        - name: Content-Type
+          in: header
+          description: ""
+          required: false
+          example: application/json
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                model:
+                  type: string
+                  title: 模型名称
+                  description: >-
+                    模型名称。可用值：
+
+                    MiniMax-Hailuo-2.3, MiniMax-Hailuo-02, T2V-01-Director,
+                    T2V-01.
+                prompt:
+                  type: string
+                  description: >-
+                    视频的文本描述，最大 2000 字符。对于 MiniMax-Hailuo-2.3、MiniMax-Hailuo-02 和
+                    *-Director 系列模型，支持使用 [指令] 语法进行运镜控制。
+
+                    可在 prompt 中通过 [指令] 格式添加运镜指令，以实现精确的镜头控制。
+
+
+                    支持 15 种运镜指令的指令:
+
+                    左右移: [左移], [右移]
+
+                    左右摇: [左摇], [右摇]
+
+                    推拉: [推进], [拉远]
+
+                    升降: [上升], [下降]
+
+                    上下摇: [上摇], [下摇]
+
+                    变焦: [变焦推近], [变焦拉远]
+
+                    其他: [晃动], [跟随], [固定]
+
+                    使用规则:
+
+                    组合运镜: 同一组 [] 内的多个指令会同时生效，如 [左摇,上升]，建议组合不超过 3 个
+
+                    顺序运镜: prompt 中前后出现的指令会依次生效，如 "...[推进], 然后...[拉远]"
+
+                    自然语言: 也支持通过自然语言描述运镜，但使用标准指令能获得更准确的响应
+                duration:
+                  type: integer
+                  description: 视频时长（秒），默认值为 6。其可用值与模型和分辨率相关：
+                metadata:
+                  type: object
+                  properties:
+                    prompt_optimizer:
+                      type: boolean
+                      description: 是否自动优化 prompt，默认为 true。设为 false 可进行更精确的控制
+                    fast_pretreatment:
+                      type: boolean
+                      description: >-
+                        是否缩短 prompt_optimizer 的优化耗时，默认为 false。仅对
+                        MiniMax-Hailuo-2.3 和 MiniMax-Hailuo-02 模型生效。
+                    resolution:
+                      type: string
+                      description: "视频分辨率。其可用值与模型相关：Model\t6s\t10s\nMiniMax-Hailuo-2.3\t768P (默认), 1080P\t768P (默认)\nMiniMax-Hailuo-02\t768P (默认), 1080P\t768P (默认)\n其他模型\t720P (默认)\t不支持\n可用选项: 720P, 768P, 1080P"
+                    callback_url:
+                      type: string
+                      description: >-
+                        接收任务状态更新通知的回调 URL。支持通过 callback_url
+                        参数可以配置回调，以接收任务状态的更新的异步通知。
+
+
+                        地址验证：配置后，MiniMax 服务器会向 callback_url 发送一个 POST 请求，请求体中包含
+                        challenge 字段。服务端需要在 3 秒内原样返回该 challenge 值以完成验证
+
+                        状态更新：验证成功后，每当任务状态变更时，MiniMax 都会向该 URL
+                        推送最新的任务状态。推送的数据结构与调用查询视频生成任务接口的响应体一致
+
+
+                        回调返回的"status"包括以下状态：
+
+
+                        "processing" - 生成中
+
+                        "success" - 成功
+
+                        "failed" - 失败
+                    aigc_watermark:
+                      type: string
+                      description: 是否在生成的视频中添加水印，默认为 false
+                  x-apifox-orders:
+                    - prompt_optimizer
+                    - fast_pretreatment
+                    - resolution
+                    - callback_url
+                    - aigc_watermark
+              x-apifox-orders:
+                - model
+                - prompt
+                - duration
+                - metadata
+              required:
+                - model
+                - prompt
+            example:
+              model: aute in ad et
+              prompt: sint deserunt eu
+              duration: minim
+              metadata:
+                prompt_optimizer: false
+                fast_pretreatment: true
+                resolution: qui aliqua Ut
+                callback_url: https://normal-parsnip.info/
+                aigc_watermark: amet minim
+        required: true
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  progress:
+                    type: integer
+                  created_at:
+                    type: integer
+                  status:
+                    type: string
+                  model:
+                    type: string
+                  object:
+                    type: string
+                  task_id:
+                    type: string
+                  id:
+                    type: string
+                required:
+                  - progress
+                  - created_at
+                  - status
+                  - model
+                  - object
+                  - task_id
+                  - id
+                x-apifox-orders:
+                  - progress
+                  - created_at
+                  - status
+                  - model
+                  - object
+                  - task_id
+                  - id
+              example: |-
+                {
+                    id: 'task_**',
+                    task_id: 'task_**',
+                    object: 'video',
+                    model: 'MiniMax-Hailuo-2.3',
+                    status: 'queued',
+                    progress: 0,
+                    created_at: 1774595255
+                }
+          headers: {}
+          x-apifox-name: 成功
+          x-apifox-ordering: 0
+      security: []
+      x-apifox-folder: 视频模型（new）/海螺视频生成
+      x-apifox-status: developing
+      x-run-in-apifox: https://app.apifox.com/web/project/7459198/apis/api-434618745-run
+components:
+  schemas: {}
+  responses: {}
+  securitySchemes:
+    apikey-header-Authorization:
+      type: apiKey
+      in: header
+      name: Authorization
+servers:
+  - url: http://192.168.5.29:4000
+    description: 测试环境
+security:
+  - apikey-header-Authorization: []
