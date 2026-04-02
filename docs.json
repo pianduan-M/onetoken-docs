@@ -13,12 +13,108 @@
       {
         "language": "cn",
         "navbar": {},
-        "groups": [
+        "tabs": [
           {
-            "group": "基础",
+            "tab": "指南",
+            "groups": [
+              {
+                "group": "基础",
+                "pages": [
+                  "zh/guide/basics/introduction",
+                  "zh/guide/basics/quickstart"
+                ]
+              },
+              {
+                "group": "中转站基本介绍",
+                "expanded": true,
+                "pages": [
+                  "zh/guide/introduction/api-quickstart",
+                  "zh/guide/introduction/ai-workbench",
+                  "zh/guide/introduction/category-table",
+                  "zh/guide/introduction/group-price",
+                  "zh/guide/introduction/new-token"
+                ]
+              },
+              {
+                "group": "图片",
+                "expanded": true,
+                "pages": [
+                  {
+                    "group": "OpenAi 通用格式",
+                    "expanded": true,
+                    "pages": [
+                      "zh/guide/image/openai/image-gen",
+                      "zh/guide/image/openai/image-edit"
+                    ]
+                  },
+                  {
+                    "group": "千问",
+                    "expanded": true,
+                    "pages": [
+                      "zh/guide/image/qwan/image-gen",
+                      "zh/guide/image/qwan/image-edit"
+                    ]
+                  },
+                  {
+                    "group": "Nano Banana",
+                    "expanded": true,
+                    "pages": [
+                      "zh/guide/image/nano-banana/Gemini",
+                      "zh/guide/image/nano-banana/OpenAI"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "视频",
+                "expanded": true,
+                "pages": [
+                  {
+                    "group": "海螺",
+                    "expanded": true,
+                    "pages": [
+                      "zh/guide/video/hailuo/video-generation-t2v",
+                      "zh/guide/video/hailuo/video-generation-i2v",
+                      "zh/guide/video/hailuo/video-generation-query"
+                    ]
+                  },
+                  {
+                    "group": "vidu",
+                    "expanded": true,
+                    "pages": [
+                      "zh/guide/video/vidu/video-generation-t2v",
+                      "zh/guide/video/vidu/video-generation-i2v",
+                      "zh/guide/video/vidu/video-generation-query"
+                    ]
+                  },
+                  {
+                    "group": "千问",
+                    "expanded": true,
+                    "pages": [
+                      "zh/guide/video/wan/video-generation-i2v",
+                      "zh/guide/video/wan/video-generation-query"
+                    ]
+                  },
+                  {
+                    "group": "Veo",
+                    "expanded": true,
+                    "pages": [
+                      "zh/guide/video/veo/video-generation-i2v",
+                      "zh/guide/video/veo/video-generation-query"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "开发工具",
             "pages": [
-              "zh/basics/introduction",
-              "zh/basics/quickstart"
+              "zh/editor/ClaudeCode",
+              "zh/editor/Cursor",
+              "zh/editor/OpenCode",
+              "zh/editor/OpenClaw",
+              "zh/editor/OpenAICodex"
             ]
           }
         ]

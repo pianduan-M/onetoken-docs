@@ -1,0 +1,14 @@
+---
+title: 如何新建指定分组的令牌
+icon: circle-plus
+---
+
+![1.png](https://api.apifox.com/api/v1/projects/5443236/resources/564771/image-preview)
+
+![2.png](https://api.apifox.com/api/v1/projects/5443236/resources/564772/image-preview)
+
+![3.png](https://api.apifox.com/api/v1/projects/5443236/resources/564773/image-preview)
+
+![4.png](https://api.apifox.com/api/v1/projects/5443236/resources/564774/image-preview)
+
+![5.png](https://api.apifox.com/api/v1/projects/5443236/resources/564775/image-preview)

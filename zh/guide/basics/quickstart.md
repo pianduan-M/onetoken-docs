@@ -1,5 +1,6 @@
 ---
 title: 快速开始
+icon: rocket
 ---
 
 生成 API 密钥并进行首次调用
@@ -7,10 +8,10 @@ title: 快速开始
 ## 直接调用 Onetoken API
 
 ::: tip
-其中 `<Onetoken_API_KEY>` 替换为 [Onetoken Key](https://onetoken.one/console/token)，注意 `key` 的有效期和额度限制。
+其中 `<Onetoken_API_KEY>` 替换为 [Onetoken Key](https://onetoken.one/token)，注意 `key` 的有效期和额度限制。
 :::
 
-可使用的 `model` 列表，可查阅 [模型广场](https://onetoken.one/pricing) ，复制模型名称替换即可。
+可使用的 `model` 列表，可查阅 [模型广场](https://onetoken.one/models) ，复制模型名称替换即可。
 
 ::: code-group
 
