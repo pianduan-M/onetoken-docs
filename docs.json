@@ -119,6 +119,13 @@
               "zh/editor/VoidEditor",
               "zh/editor/Clawx"
             ]
+          },
+          {
+            "tab": "FAQs",
+            "pages": [
+              "zh/FAQs/questions",
+              "zh/FAQs/http-code"
+            ]
           }
         ]
       }

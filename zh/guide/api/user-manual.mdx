@@ -1,0 +1,17 @@
+---
+title: API 手册
+openapi: "/user-manual.yaml POST /chat/completions"
+---
+
+API 沙盒环境支持实时请求调试，直观查看接口返回数据。
+
+<Info>
+  为了代码安全，建议:
+
+- 通过环境变量管理敏感信息（如 API Key），比如对于 Python 调用，使用 `os.getenv("ONETOKEN_API_KEY")`。
+- 不要在日志/输出中打印敏感信息。
+- 不要将密钥提交到代码仓库，可以通过将 .env 添加到 .gitignore 来防止泄漏。
+
+</Info>
+
+## OpenAPI
