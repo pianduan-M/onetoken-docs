@@ -306,6 +306,12 @@ claude -v
 
 升级到最新版本的 Claude Code 后，若出现无法连接 Anthropic 服务或认证失败的情况，通常是由于认证请求头名称已发生调整所致。新版本要求将请求头由 `ANTHROPIC_API_KEY` 修改为 `ANTHROPIC_AUTH_TOKEN`，API Key 的值无需更换，仅需更新请求头名称并重新加载配置即可。具体操作可参考本文档重新配置。
 
+### Q: Login:API Error: 403
+
+<img src="/images/claudecode/7.png" />
+
+cc升级到最新版，并且关闭ccs的本地代理跟故障转移功能
+
 ## 更多资源
 
 - [Github](https://github.com/inferera/aihubmix/blob/main/packages/claude-code/README.md)
