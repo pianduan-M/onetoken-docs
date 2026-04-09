@@ -1,8 +1,7 @@
 ---
-
-## title: 生成图像
-
+title: 生成图像
 icon: image
+---
 
 ## (百炼 Qwen-Image 系列)
 
