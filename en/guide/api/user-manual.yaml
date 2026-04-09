@@ -1,0 +1,176 @@
+openapi: 3.0.1
+info:
+  title: Onetoken API
+  description: |-
+    Onetoken provides API access to many AI models via an OpenAI-compatible surface—you can swap the official SDK base URL and keep coding.
+
+    Get an API key: [https://onetoken.one/console/token](https://onetoken.one/console/token)
+    Browse models: [https://onetoken.one/pricing](https://onetoken.one/pricing)
+  version: 1.0.0
+servers:
+  - url: https://onetoken.one/v1
+    description: Production
+security:
+  - bearerAuth: []
+paths:
+  /chat/completions:
+    post:
+      summary: Create chat completion
+      description: Generate a model reply from the provided messages; supports many models and parameters.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - model
+                - messages
+              properties:
+                model:
+                  type: string
+                  description: Model id—see the [model hub](https://onetoken.one/pricing)
+                messages:
+                  type: array
+                  description: Chat turns with role and content
+                  items:
+                    type: object
+                    required:
+                      - role
+                      - content
+                    properties:
+                      role:
+                        type: string
+                        description: Role such as user, assistant, system, developer
+                      content:
+                        type: string
+                        description: Message body
+                temperature:
+                  type: number
+                  description: Sampling temperature (0–2); higher = more random
+                  default: 0.8
+                max_tokens:
+                  type: integer
+                  description: Max tokens to generate; limit depends on the model
+                  default: 1024
+                top_p:
+                  type: number
+                  description: Nucleus sampling
+                  default: 1
+                frequency_penalty:
+                  type: number
+                  description: Penalize repeated tokens
+                  default: 0
+                presence_penalty:
+                  type: number
+                  description: Encourage new topics
+                  default: 0
+                stream:
+                  type: boolean
+                  description: Stream partial results
+                  default: false
+                web_search_options:
+                  type: object
+                  description: Web search options for search-capable models only
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  choices:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        message:
+                          type: object
+                          properties:
+                            role:
+                              type: string
+                              description: Usually assistant
+                            content:
+                              type: string
+                              description: Generated text
+                        finish_reason:
+                          type: string
+                          description: Why generation stopped (e.g. stop, length)
+                  usage:
+                    type: object
+                    properties:
+                      prompt_tokens:
+                        type: integer
+                        description: Prompt tokens
+                      completion_tokens:
+                        type: integer
+                        description: Completion tokens
+                      total_tokens:
+                        type: integer
+                        description: Total tokens
+        "400":
+          description: Invalid request
+        "401":
+          description: Authentication failed
+        "429":
+          description: Rate limited
+        "500":
+          description: Server error
+      x-codeSamples:
+        - lang: python
+          label: Python
+          source: |-
+            from openai import OpenAI
+
+            client = OpenAI(
+                base_url="https://onetoken.one/v1",
+                api_key="Onetoken_API_KEY"
+            )
+
+            completion = client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=[{"role": "user", "content": "Hello"}]
+            )
+
+            print(completion.choices[0].message)
+        - lang: javascript
+          label: Node.js
+          source: |-
+            import OpenAI from 'openai';
+
+            const openai = new OpenAI({
+              baseURL: 'https://onetoken.one/v1',
+              apiKey: 'Onetoken_API_KEY'
+            });
+
+            async function main() {
+              const completion = await openai.chat.completions.create({
+                model: 'gpt-3.5-turbo',
+                messages: [
+                  {
+                    'role': 'user',
+                    'content': 'Hello'
+                  }
+                ]
+              });
+
+              console.log(completion.choices[0].message);
+            }
+
+            main();
+        - lang: curl
+          label: Curl
+          source: |-
+            curl https://onetoken.one/v1/chat/completions \
+              -H "Authorization: Bearer Onetoken_API_KEY" \
+              -H "Content-Type: application/json" \
+              -d "{\"model\": \"gpt-3.5-turbo\",\"messages\": [{\"role\": \"user\", \"content\": \"Hello\"}]}"
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: >-
+        Send `Authorization: Bearer Onetoken_API_KEY`. Create keys at
+        [https://onetoken.one/token/add](https://onetoken.one/token/add)

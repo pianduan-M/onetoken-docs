@@ -104,6 +104,20 @@
                     ]
                   }
                 ]
+              },
+              {
+                "group": "聊天",
+                "expanded": true,
+                "pages": [
+                  "zh/guide/chat/ChatGPT",
+                  "zh/guide/chat/Anthropic Claude",
+                  "zh/guide/chat/ChatGPT嵌入（Embeddings）",
+                  "zh/guide/chat/ChatGPT自动补全（Completions）"
+                ]
+              },
+              {
+                "group": "API 手册",
+                "pages": ["zh/guide/api/user-manual"]
               }
             ]
           },
@@ -125,6 +139,139 @@
             "pages": [
               "zh/FAQs/questions",
               "zh/FAQs/http-code"
+            ]
+          }
+        ]
+      },
+      {
+        "language": "en",
+        "navbar": {},
+        "tabs": [
+          {
+            "tab": "Guide",
+            "groups": [
+              {
+                "group": "Basics",
+                "pages": [
+                  "en/guide/basics/introduction",
+                  "en/guide/basics/quickstart"
+                ]
+              },
+              {
+                "group": "Relay overview",
+                "expanded": true,
+                "pages": [
+                  "en/guide/introduction/api-quickstart",
+                  "en/guide/introduction/ai-workbench",
+                  "en/guide/introduction/category-table",
+                  "en/guide/introduction/group-price",
+                  "en/guide/introduction/new-token"
+                ]
+              },
+              {
+                "group": "Images",
+                "expanded": true,
+                "pages": [
+                  {
+                    "group": "OpenAI format",
+                    "expanded": true,
+                    "pages": [
+                      "en/guide/image/openai/image-gen",
+                      "en/guide/image/openai/image-edit"
+                    ]
+                  },
+                  {
+                    "group": "Qwen",
+                    "expanded": true,
+                    "pages": [
+                      "en/guide/image/qwan/image-gen",
+                      "en/guide/image/qwan/image-edit"
+                    ]
+                  },
+                  {
+                    "group": "Nano Banana",
+                    "expanded": true,
+                    "pages": [
+                      "en/guide/image/nano-banana/Gemini",
+                      "en/guide/image/nano-banana/OpenAI"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Video",
+                "expanded": true,
+                "pages": [
+                  {
+                    "group": "Hailuo",
+                    "expanded": true,
+                    "pages": [
+                      "en/guide/video/hailuo/video-generation-t2v",
+                      "en/guide/video/hailuo/video-generation-i2v",
+                      "en/guide/video/hailuo/video-generation-query"
+                    ]
+                  },
+                  {
+                    "group": "vidu",
+                    "expanded": true,
+                    "pages": [
+                      "en/guide/video/vidu/video-generation-t2v",
+                      "en/guide/video/vidu/video-generation-i2v",
+                      "en/guide/video/vidu/video-generation-query"
+                    ]
+                  },
+                  {
+                    "group": "Qwen",
+                    "expanded": true,
+                    "pages": [
+                      "en/guide/video/wan/video-generation-i2v",
+                      "en/guide/video/wan/video-generation-query"
+                    ]
+                  },
+                  {
+                    "group": "Veo",
+                    "expanded": true,
+                    "pages": [
+                      "en/guide/video/veo/video-generation-i2v",
+                      "en/guide/video/veo/video-generation-query"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Chat",
+                "expanded": true,
+                "pages": [
+                  "en/guide/chat/ChatGPT",
+                  "en/guide/chat/Anthropic Claude",
+                  "en/guide/chat/ChatGPT嵌入（Embeddings）",
+                  "en/guide/chat/ChatGPT自动补全（Completions）"
+                ]
+              },
+              {
+                "group": "API manual",
+                "pages": ["en/guide/api/user-manual"]
+              }
+            ]
+          },
+          {
+            "tab": "Developer tools",
+            "pages": [
+              "en/editor/ClaudeCode",
+              "en/editor/Cursor",
+              "en/editor/OpenCode",
+              "en/editor/OpenClaw",
+              "en/editor/OpenAICodex",
+              "en/editor/QwenCode",
+              "en/editor/VoidEditor",
+              "en/editor/Clawx"
+            ]
+          },
+          {
+            "tab": "FAQs",
+            "pages": [
+              "en/FAQs/questions",
+              "en/FAQs/http-code"
             ]
           }
         ]

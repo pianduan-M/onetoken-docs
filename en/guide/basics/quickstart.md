@@ -1,16 +1,17 @@
-# 快速开始
+---
+title: Quickstart
+icon: rocket
+---
 
-sas
+Create an API key and make your first call.
 
-生成 API 密钥并进行首次调用
-
-## 直接调用 Onetoken API
+## Call Onetoken API directly
 
 ::: tip
-其中 `<Onetoken_API_KEY>` 替换为 [Onetoken Key](https://onetoken.one/console/token)，注意 `key` 的有效期和额度限制。
+Replace `<Onetoken_API_KEY>` with your [Onetoken key](https://onetoken.one/token). Mind the key’s expiry and quota limits.
 :::
 
-可使用的 `model` 列表，可查阅 [模型广场](https://onetoken.one/pricing) ，复制模型名称替换即可。
+For available `model` values, see the [model hub](https://onetoken.one/models) and copy the model name into your request.
 
 ::: code-group
 
@@ -25,7 +26,7 @@ response = requests.post(
         "Content-Type": "application/json",
     },
     data=json.dumps({
-        "model": "gpt-4o-mini",  # 替换模型 id
+        "model": "gpt-4o-mini",  # replace with your model id
         "messages": [
             {
                 "role": "user",
@@ -37,7 +38,7 @@ response = requests.post(
 ```
 
 ```ts [JavaScript]
-// 请在 https://onetoken.one 域名下尝试，否则有浏览器跨域问题
+// Try from https://onetoken.one; other origins may hit browser CORS limits
 fetch("https://onetoken.one/v1/chat/completions", {
   method: "POST",
   headers: {
@@ -73,11 +74,11 @@ curl 'https://onetoken.one/v1/chat/completions' \
 
 :::
 
-支持流式调用，只需要增加参数 `stream: true`
+Streaming: add `"stream": true` to the request body.
 
-## 使用 OpenAI SDK
+## Use the OpenAI SDK
 
-其中 `<Onetoken_API_KEY>` 替换为 [Onetoken Key](https://onetoken.one/token)，注意 `key` 的有效期和额度限制。 可使用的 `model` 列表，可查阅 [模型广场](https://onetoken.one/models) ，复制模型名称替换即可。
+Replace `<Onetoken_API_KEY>` with your [Onetoken key](https://onetoken.one/token). For `model` names, use the [model hub](https://onetoken.one/models).
 
 ::: code-group
 
@@ -95,7 +96,7 @@ completion = client.chat.completions.create(
     messages=[
         {
             "role": "developer",
-            "content": "总是用中文回复"
+            "content": "Always reply in English"
         },
         {
             "role": "user",
@@ -140,14 +141,14 @@ main();
 
 :::
 
-对于支持搜索的模型，可以追加下方参数来支持：
+For search-capable models, you can add:
 
 ```Python theme={null}
-  web_search_options={}, # 搜索参数
+  web_search_options={}, # search options
 ```
 
-可用模型：`gpt-4o-search-preview`、`gpt-4o-mini-search-preview`。
+Models: `gpt-4o-search-preview`, `gpt-4o-mini-search-preview`.
 
 ::: info
-注意搜索模型暂不支持 `temperature` 等细节参数。
+Search models may not support `temperature` and some other fine-grained parameters.
 :::
