@@ -48,7 +48,7 @@
                     ]
                   },
                   {
-                    "group": "千问",
+                    "group": "通义千问",
                     "expanded": true,
                     "pages": [
                       "zh/guide/image/qwan/image-gen",
@@ -114,11 +114,8 @@
                   "zh/guide/chat/ChatGPT嵌入（Embeddings）",
                   "zh/guide/chat/ChatGPT自动补全（Completions）"
                 ]
-              },
-              {
-                "group": "API 手册",
-                "pages": ["zh/guide/api/user-manual"]
               }
+            
             ]
           },
           {
@@ -247,10 +244,6 @@
                   "en/guide/chat/ChatGPT嵌入（Embeddings）",
                   "en/guide/chat/ChatGPT自动补全（Completions）"
                 ]
-              },
-              {
-                "group": "API manual",
-                "pages": ["en/guide/api/user-manual"]
               }
             ]
           },
