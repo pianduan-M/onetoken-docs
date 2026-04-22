@@ -115,7 +115,6 @@
                   "zh/guide/chat/ChatGPT自动补全（Completions）"
                 ]
               }
-            
             ]
           },
           {
@@ -128,7 +127,15 @@
               "zh/editor/OpenAICodex",
               "zh/editor/QwenCode",
               "zh/editor/VoidEditor",
-              "zh/editor/Clawx"
+              "zh/editor/Clawx",
+              "zh/editor/RikkaHub",
+              "zh/editor/Codex",
+              "zh/editor/Coze",
+              "zh/editor/cline",
+              "zh/editor/dify",
+              "zh/editor/CherryStudio",
+              "zh/editor/CherryStudioMcp",
+              "zh/editor/CherryStudioO4"
             ]
           },
           {
@@ -257,7 +264,13 @@
               "en/editor/OpenAICodex",
               "en/editor/QwenCode",
               "en/editor/VoidEditor",
-              "en/editor/Clawx"
+              "en/editor/Clawx",
+              "en/editor/Coze",
+              "en/editor/cline",
+              "en/editor/dify",
+              "en/editor/CherryStudio",
+              "en/editor/CherryStudioMcp",
+              "en/editor/CherryStudioO4"
             ]
           },
           {

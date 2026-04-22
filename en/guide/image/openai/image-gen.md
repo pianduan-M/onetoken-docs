@@ -18,16 +18,16 @@ Create images from a text prompt using the native OpenAI-style API.
 
 ### Request body
 
-| Field | Type | Required | Default | Description |
-| :-- | :-- | :-- | :-- | :-- |
-| **model** | `string` | No | `dall-e-2` | Model: `dall-e-2`, `dall-e-3`, or `gpt-image-1`. |
-| **prompt** | `string` | **Yes** | - | Text description. Up to 32k chars for GPT-image-1. |
-| **n** | `integer` | No | `1` | Number of images (1–10). `dall-e-3` only supports 1. |
-| **size** | `string` | No | `1024x1024` | Size. `gpt-image-1`: `1024x1024`, `1536x1024`, `1024x1536`, or auto. |
-| **background** | `string` | No | auto | Background transparency (`gpt-image-1` only): transparent, opaque, or auto. |
-| **moderation** | `string` | No | auto | Moderation: low (fewer restrictions) or auto. |
-| **quality** | `string` | No | - | Quality (HD / standard). |
-| **style** | `string` | No | - | Style hint. |
+| Field          | Type      | Required | Default     | Description                                                                      |
+| :------------- | :-------- | :------- | :---------- | :------------------------------------------------------------------------------- |
+| **model**      | `string`  | No       | `dall-e-2`  | Model: `dall-e-2`, `dall-e-3`, or `gpt-image-1`、`gpt-image-1.5`、`gpt-image-2`. |
+| **prompt**     | `string`  | **Yes**  | -           | Text description. Up to 32k chars for GPT-image-1.                               |
+| **n**          | `integer` | No       | `1`         | Number of images (1–10). `dall-e-3` only supports 1.                             |
+| **size**       | `string`  | No       | `1024x1024` | Size. `gpt-image-1`: `1024x1024`, `1536x1024`, `1024x1536`, or auto.             |
+| **background** | `string`  | No       | auto        | Background transparency (`gpt-image-1` only): transparent, opaque, or auto.      |
+| **moderation** | `string`  | No       | auto        | Moderation: low (fewer restrictions) or auto.                                    |
+| **quality**    | `string`  | No       | -           | Quality (HD / standard).                                                         |
+| **style**      | `string`  | No       | -           | Style hint.                                                                      |
 
 ---
 
@@ -35,13 +35,13 @@ Create images from a text prompt using the native OpenAI-style API.
 
 **200 OK**
 
-| Field | Type | Description |
-| :-- | :-- | :-- |
-| **created** | `integer` | Unix timestamp. |
-| **data** | `array` | Image objects. |
-| └─ **url** | `string` | Hosted image URL. |
-| └─ **b64_json** | `string` | Base64 image data. |
-| **usage** | `object` | Usage stats. |
+| Field               | Type      | Description                    |
+| :------------------ | :-------- | :----------------------------- |
+| **created**         | `integer` | Unix timestamp.                |
+| **data**            | `array`   | Image objects.                 |
+| └─ **url**          | `string`  | Hosted image URL.              |
+| └─ **b64_json**     | `string`  | Base64 image data.             |
+| **usage**           | `object`  | Usage stats.                   |
 | └─ **total_tokens** | `integer` | Total tokens for this request. |
 
 ---
