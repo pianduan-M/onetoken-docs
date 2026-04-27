@@ -18,7 +18,7 @@ icon: code
 3. 默认选择 Gateway 填写
 
 - Gateway base URL: https://onetoken.one/
-- Gateway API key [Onetoken 平台](https://console.aihubmix.com/token) 获取的 API Key
+- Gateway API key [Onetoken 平台](https://onetoken.one/console/token) 获取的 API Key
 
 其他不用动 点击 apply locally , 弹窗点击 relaunch now
 

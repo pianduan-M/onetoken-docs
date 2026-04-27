@@ -18,8 +18,7 @@ icon: code
 3. By default, select **Gateway**. Enter the following details:
 
 - **Gateway base URL:** `https://onetoken.one/`
-   
-- **Gateway API key:** Use the API Key obtained from the [Onetoken Platform](https://console.aihubmix.com/token).
+- **Gateway API key:** Use the API Key obtained from the [Onetoken Platform](https://onetoken.one/console/token).
 
 Leave other settings as they are, click **Apply locally**, and then click **Relaunch now** in the pop-up window.
 

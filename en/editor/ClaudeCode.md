@@ -36,9 +36,9 @@ npm install -g @anthropic-ai/claude-code
 
 For Anthropic-compatible access via Onetoken, set:
 
-1. `ANTHROPIC_BASE_URL` → `https://onetoken.one`
-2. `ANTHROPIC_AUTH_TOKEN` → API key from [Onetoken](https://console.aihubmix.com/token)
-3. `ANTHROPIC_MODEL` → a model id from the [model list](https://onetoken.one/models)
+1. `BASE_URL` → `https://onetoken.one`
+2. `AUTH_TOKEN` → API key from [Onetoken](https://onetoken.one/console/token)
+3. `MODEL` → a model id from the [model list](https://onetoken.one/pricing)
 
 <Tabs>
   <Tab title="macOS">
@@ -52,15 +52,15 @@ For Anthropic-compatible access via Onetoken, set:
 
     <CodeGroup>
       ```shellscript Zsh theme={null}
-      echo 'export ANTHROPIC_BASE_URL="https://onetoken.one"' >> ~/.zshrc
-      echo 'export ANTHROPIC_AUTH_TOKEN="ONETOKEN_API_KEY"' >> ~/.zshrc
-      echo 'export ANTHROPIC_MODEL="claude-sonnet-4-5"' >> ~/.zshrc
+      echo 'export BASE_URL="https://onetoken.one"' >> ~/.zshrc
+      echo 'export AUTH_TOKEN="ONETOKEN_API_KEY"' >> ~/.zshrc
+      echo 'export MODEL="claude-sonnet-4-5"' >> ~/.zshrc
       ```
 
       ```shellscript Bash theme={null}
-      echo 'export ANTHROPIC_BASE_URL="https://onetoken.one"' >> ~/.bash_profile
-      echo 'export ANTHROPIC_AUTH_TOKEN="ONETOKEN_API_KEY"' >> ~/.bash_profile
-      echo 'export ANTHROPIC_MODEL="claude-sonnet-4-5"' >> ~/.bash_profile
+      echo 'export BASE_URL="https://onetoken.one"' >> ~/.bash_profile
+      echo 'export AUTH_TOKEN="ONETOKEN_API_KEY"' >> ~/.bash_profile
+      echo 'export MODEL="claude-sonnet-4-5"' >> ~/.bash_profile
       ```
     </CodeGroup>
 
@@ -79,15 +79,15 @@ For Anthropic-compatible access via Onetoken, set:
     4. Verify in a new terminal:
 
     ```shellscript  theme={null}
-    echo $ANTHROPIC_BASE_URL
-    echo $ANTHROPIC_AUTH_TOKEN
-    echo $ANTHROPIC_MODEL
+    echo $BASE_URL
+    echo $AUTH_TOKEN
+    echo $MODEL
     ```
 
   </Tab>
 
   <Tab title="Windows">
-    In CMD or PowerShell, set Onetoken base URL and [API key](https://onetoken.one/token) as user env vars.
+    In CMD or PowerShell, set Onetoken base URL and [API key](https://onetoken.one/console/token) as user env vars.
 
     <Tabs>
       <Tab title="CMD">
@@ -95,17 +95,17 @@ For Anthropic-compatible access via Onetoken, set:
 
         ```shellscript  theme={null}
         REM Replace ONETOKEN_API_KEY
-        setx ANTHROPIC_AUTH_TOKEN "ONETOKEN_API_KEY"
-        setx ANTHROPIC_BASE_URL "https://onetoken.one"
-        setx ANTHROPIC_MODEL "claude-sonnet-4-5"
+        setx AUTH_TOKEN "ONETOKEN_API_KEY"
+        setx BASE_URL "https://onetoken.one"
+        setx MODEL "claude-sonnet-4-5"
         ```
 
         2. New CMD window:
 
         ```shellscript  theme={null}
-        echo %ANTHROPIC_AUTH_TOKEN%
-        echo %ANTHROPIC_BASE_URL%
-        echo %ANTHROPIC_MODEL%
+        echo %AUTH_TOKEN%
+        echo %BASE_URL%
+        echo %MODEL%
         ```
       </Tab>
 
@@ -114,17 +114,17 @@ For Anthropic-compatible access via Onetoken, set:
 
         ```shellscript  theme={null}
         # Replace ONETOKEN_API_KEY
-        [Environment]::SetEnvironmentVariable("ANTHROPIC_AUTH_TOKEN", "ONETOKEN_API_KEY", [EnvironmentVariableTarget]::User)
-        [Environment]::SetEnvironmentVariable("ANTHROPIC_BASE_URL", "https://onetoken.one", [EnvironmentVariableTarget]::User)
-        [Environment]::SetEnvironmentVariable("ANTHROPIC_MODEL", "claude-sonnet-4-5", [EnvironmentVariableTarget]::User)
+        [Environment]::SetEnvironmentVariable("AUTH_TOKEN", "ONETOKEN_API_KEY", [EnvironmentVariableTarget]::User)
+        [Environment]::SetEnvironmentVariable("BASE_URL", "https://onetoken.one", [EnvironmentVariableTarget]::User)
+        [Environment]::SetEnvironmentVariable("MODEL", "claude-sonnet-4-5", [EnvironmentVariableTarget]::User)
         ```
 
         2. New PowerShell window:
 
         ```shellscript  theme={null}
-        echo $env:ANTHROPIC_AUTH_TOKEN
-        echo $env:ANTHROPIC_BASE_URL
-        echo $env:ANTHROPIC_MODEL
+        echo $env:AUTH_TOKEN
+        echo $env:BASE_URL
+        echo $env:MODEL
         ```
       </Tab>
     </Tabs>
@@ -173,23 +173,23 @@ claude --model claude-sonnet-4-5
 3. **Env defaults** (global):
 
 ```shellscript theme={null}
-export ANTHROPIC_DEFAULT_OPUS_MODEL="claude-opus-4-5"
-export ANTHROPIC_DEFAULT_SONNET_MODEL="claude-sonnet-4-5"
-export ANTHROPIC_DEFAULT_HAIKU_MODEL="claude-haiku-4-5"
+export DEFAULT_OPUS_MODEL="claude-opus-4-5"
+export DEFAULT_SONNET_MODEL="claude-sonnet-4-5"
+export DEFAULT_HAIKU_MODEL="claude-haiku-4-5"
 ```
 
-- **OPUS** — hard reasoning / architecture  
-- **SONNET** — everyday coding  
-- **HAIKU** — quick checks, search  
+- **OPUS** — hard reasoning / architecture
+- **SONNET** — everyday coding
+- **HAIKU** — quick checks, search
 
 4. **`settings.json`** (project or user home):
 
 ```json theme={null}
 {
   "env": {
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4-5",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-5",
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-haiku-4-5"
+    "DEFAULT_OPUS_MODEL": "claude-opus-4-5",
+    "DEFAULT_SONNET_MODEL": "claude-sonnet-4-5",
+    "DEFAULT_HAIKU_MODEL": "claude-haiku-4-5"
   }
 }
 ```
@@ -286,7 +286,7 @@ claude -v
 
 ### Q: Cannot reach Anthropic
 
-Newer Claude Code builds expect **`ANTHROPIC_AUTH_TOKEN`** instead of `ANTHROPIC_API_KEY`. Update the header name and reload env—key value stays the same. Follow the env steps above.
+Newer Claude Code builds expect **`AUTH_TOKEN`** instead of `API_KEY`. Update the header name and reload env—key value stays the same. Follow the env steps above.
 
 ### Q: Login API Error 403
 
@@ -294,11 +294,5 @@ Newer Claude Code builds expect **`ANTHROPIC_AUTH_TOKEN`** instead of `ANTHROPIC
 
 Upgrade Claude Code to the latest version and disable CC-Switch local proxy / failover if enabled.
 
-## More links
-
-- [GitHub](https://github.com/inferera/aihubmix/blob/main/packages/claude-code/README.md)
-- [npm package](https://www.npmjs.com/package/@aihubmix/claude-code)
-- [Anthropic best practices](https://www.anthropic.com/engineering/claude-code-best-practices)
-- [Official settings](https://docs.anthropic.com/en/docs/claude-code/settings#settings-files)
 
 Happy coding!

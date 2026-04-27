@@ -36,9 +36,9 @@ npm install -g @anthropic-ai/claude-code
 
 要通过兼容 Anthropic API 的方式来接入 Onetoken 的模型服务，需要配置以下环境变量。
 
-1. 将`ANTHROPIC_BASE_URL` 设置为`https://onetoken.one`
-2. `ANTHROPIC_AUTH_TOKEN` 设置为从 [Onetoken 平台](https://console.aihubmix.com/token) 获取的 API Key
-3. `ANTHROPIC_MODEL`：设置为[模型列表](https://onetoken.one/models)中支持的模型。
+1. 将`BASE_URL` 设置为`https://onetoken.one`
+2. `AUTH_TOKEN` 设置为从 [Onetoken 平台](https://onetoken.one/console/token) 获取的 API Key
+3. `MODEL`：设置为[模型列表](https://onetoken.one/pricing)中支持的模型。
 
 <Tabs>
   <Tab title="macOS">
@@ -53,16 +53,16 @@ npm install -g @anthropic-ai/claude-code
     <CodeGroup>
       ```shellscript Zsh theme={null}
       # ONETOKEN_API_KEY 替换为你从 ONETOKEN 平台获取的 Key
-      echo 'export ANTHROPIC_BASE_URL="https://onetoken.one"' >> ~/.zshrc
-      echo 'export ANTHROPIC_AUTH_TOKEN="ONETOKEN_API_KEY"' >> ~/.zshrc
-      echo 'export ANTHROPIC_MODEL="claude-sonnet-4-5"' >> ~/.zshrc
+      echo 'export BASE_URL="https://onetoken.one"' >> ~/.zshrc
+      echo 'export AUTH_TOKEN="ONETOKEN_API_KEY"' >> ~/.zshrc
+      echo 'export MODEL="claude-sonnet-4-5"' >> ~/.zshrc
       ```
 
       ```shellscript Bash theme={null}
       # ONETOKEN_API_KEY 替换为你从 ONETOKEN 平台获取的 Key
-      echo 'export ANTHROPIC_BASE_URL="https://onetoken.one"' >> ~/.bash_profile
-      echo 'export ANTHROPIC_AUTH_TOKEN="ONETOKEN_API_KEY"' >> ~/.bash_profile
-      echo 'export ANTHROPIC_MODEL="claude-sonnet-4-5"' >> ~/.bash_profile
+      echo 'export BASE_URL="https://onetoken.one"' >> ~/.bash_profile
+      echo 'export AUTH_TOKEN="ONETOKEN_API_KEY"' >> ~/.bash_profile
+      echo 'export MODEL="claude-sonnet-4-5"' >> ~/.bash_profile
       ```
     </CodeGroup>
 
@@ -81,15 +81,15 @@ npm install -g @anthropic-ai/claude-code
     4. 打开一个新的终端，执行下列命令，查看环境变量是否生效。
 
     ```shellscript  theme={null}
-    echo $ANTHROPIC_BASE_URL
-    echo $ANTHROPIC_AUTH_TOKEN
-    echo $ANTHROPIC_MODEL
+    echo $BASE_URL
+    echo $AUTH_TOKEN
+    echo $MODEL
     ```
 
   </Tab>
 
   <Tab title="Windows">
-    在 Windows 中，可以通过 CMD 或 PowerShell 将 AiHubMix 的 Base URL 和 [API Key](https://help.aliyun.com/zh/model-studio/get-api-key) 设置为环境变量。
+    在 Windows 中，可以通过 CMD 或 PowerShell 将 Onetoken 的 Base URL 和 [API Key](https://help.aliyun.com/zh/model-studio/get-api-key) 设置为环境变量。
 
     <Tabs>
       <Tab title="CMD">
@@ -97,17 +97,17 @@ npm install -g @anthropic-ai/claude-code
 
         ```shellscript  theme={null}
         REM Onetoken API Key 替换 ONETOKEN_API_KEY
-        setx ANTHROPIC_AUTH_TOKEN "ONETOKEN_API_KEY"
-        setx ANTHROPIC_BASE_URL "https://onetoken.one"
-        setx ANTHROPIC_MODEL "claude-sonnet-4-5"
+        setx AUTH_TOKEN "ONETOKEN_API_KEY"
+        setx BASE_URL "https://onetoken.one"
+        setx MODEL "claude-sonnet-4-5"
         ```
 
         2. 打开一个新的 CMD 窗口，运行以下命令，检查环境变量是否生效。
 
         ```shellscript  theme={null}
-        echo %ANTHROPIC_AUTH_TOKEN%
-        echo %ANTHROPIC_BASE_URL%
-        echo %ANTHROPIC_MODEL%
+        echo %AUTH_TOKEN%
+        echo %BASE_URL%
+        echo %MODEL%
         ```
       </Tab>
 
@@ -116,17 +116,17 @@ npm install -g @anthropic-ai/claude-code
 
         ```shellscript  theme={null}
         # Onetoken API Key 替换 ONETOKEN_API_KEY
-        [Environment]::SetEnvironmentVariable("ANTHROPIC_AUTH_TOKEN", "ONETOKEN_API_KEY", [EnvironmentVariableTarget]::User)
-        [Environment]::SetEnvironmentVariable("ANTHROPIC_BASE_URL", "https://onetoken.one", [EnvironmentVariableTarget]::User)
-        [Environment]::SetEnvironmentVariable("ANTHROPIC_MODEL", "claude-sonnet-4-5", [EnvironmentVariableTarget]::User)
+        [Environment]::SetEnvironmentVariable("AUTH_TOKEN", "ONETOKEN_API_KEY", [EnvironmentVariableTarget]::User)
+        [Environment]::SetEnvironmentVariable("BASE_URL", "https://onetoken.one", [EnvironmentVariableTarget]::User)
+        [Environment]::SetEnvironmentVariable("MODEL", "claude-sonnet-4-5", [EnvironmentVariableTarget]::User)
         ```
 
         2. 打开一个新的 PowerShell 窗口，运行以下命令，检查环境变量是否生效。
 
         ```shellscript  theme={null}
-        echo $env:ANTHROPIC_AUTH_TOKEN
-        echo $env:ANTHROPIC_BASE_URL
-        echo $env:ANTHROPIC_MODEL
+        echo $env:AUTH_TOKEN
+        echo $env:BASE_URL
+        echo $env:MODEL
         ```
       </Tab>
     </Tabs>
@@ -179,25 +179,25 @@ claude --model claude-sonnet-4-5
 3. **设置环境变量**：可按任务复杂度配置不同级别的模型，Claude Code 会根据任务类型自动选择合适的模型。适用于全局生效。
 
 ```shellscript theme={null}
-export ANTHROPIC_DEFAULT_OPUS_MODEL="claude-opus-4-5"
-export ANTHROPIC_DEFAULT_SONNET_MODEL="claude-sonnet-4-5"
-export ANTHROPIC_DEFAULT_HAIKU_MODEL="claude-haiku-4-5"
+export DEFAULT_OPUS_MODEL="claude-opus-4-5"
+export DEFAULT_SONNET_MODEL="claude-sonnet-4-5"
+export DEFAULT_HAIKU_MODEL="claude-haiku-4-5"
 ```
 
 其中：
 
-- `ANTHROPIC_DEFAULT_OPUS_MODEL`：用于复杂推理、架构设计等高难度任务。
-- `ANTHROPIC_DEFAULT_SONNET_MODEL`：用于代码编写、功能实现等日常任务。
-- `ANTHROPIC_DEFAULT_HAIKU_MODEL`：用于语法检查、文件搜索等简单任务。
+- `DEFAULT_OPUS_MODEL`：用于复杂推理、架构设计等高难度任务。
+- `DEFAULT_SONNET_MODEL`：用于代码编写、功能实现等日常任务。
+- `DEFAULT_HAIKU_MODEL`：用于语法检查、文件搜索等简单任务。
 
 4. **在 setting.json 配置文件中永久设置**：在项目根目录或用户主目录创建`settings.json`文件，并写入模型配置信息，可分别进行项目级或用户级的永久配置。
 
 ```json theme={null}
 {
   "env": {
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4-5",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-5",
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-haiku-4-5"
+    "DEFAULT_OPUS_MODEL": "claude-opus-4-5",
+    "DEFAULT_SONNET_MODEL": "claude-sonnet-4-5",
+    "DEFAULT_HAIKU_MODEL": "claude-haiku-4-5"
   }
 }
 ```
@@ -304,19 +304,12 @@ claude -v
 
 ### Q：Claude Code 无法连接 Anthropic 服务
 
-升级到最新版本的 Claude Code 后，若出现无法连接 Anthropic 服务或认证失败的情况，通常是由于认证请求头名称已发生调整所致。新版本要求将请求头由 `ANTHROPIC_API_KEY` 修改为 `ANTHROPIC_AUTH_TOKEN`，API Key 的值无需更换，仅需更新请求头名称并重新加载配置即可。具体操作可参考本文档重新配置。
+升级到最新版本的 Claude Code 后，若出现无法连接 Anthropic 服务或认证失败的情况，通常是由于认证请求头名称已发生调整所致。新版本要求将请求头由 `API_KEY` 修改为 `AUTH_TOKEN`，API Key 的值无需更换，仅需更新请求头名称并重新加载配置即可。具体操作可参考本文档重新配置。
 
 ### Q: Login:API Error: 403
 
 <img src="/images/claudecode/7.png" />
 
 cc升级到最新版，并且关闭ccs的本地代理跟故障转移功能
-
-## 更多资源
-
-- [Github](https://github.com/inferera/aihubmix/blob/main/packages/claude-code/README.md)
-- [npm 包](https://www.npmjs.com/package/@aihubmix/claude-code)
-- [官方最佳实践](https://www.anthropic.com/engineering/claude-code-best-practices)
-- [官方配置指引](https://docs.anthropic.com/en/docs/claude-code/settings#settings-files)
 
 祝你使用愉快！
