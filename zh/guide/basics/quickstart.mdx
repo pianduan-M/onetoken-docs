@@ -7,13 +7,13 @@ icon: rocket
 
 ## 直接调用 Onetoken API
 
-::: tip
-其中 `<Onetoken_API_KEY>` 替换为 [Onetoken Key](https://onetoken.one/token)，注意 `key` 的有效期和额度限制。
-:::
+<Tip>
+其中 `<Onetoken_API_KEY>` 替换为 [Onetoken Key](https://onetoken.one/console/token)，注意 `key` 的有效期和额度限制。
+</Tip>
 
-可使用的 `model` 列表，可查阅 [模型广场](https://onetoken.one/models) ，复制模型名称替换即可。
+可使用的 `model` 列表，可查阅 [模型广场](https://onetoken.one/pricing) ，复制模型名称替换即可。
 
-::: code-group
+<CodeGroup>
 
 ```py [Python]
 import requests
@@ -72,15 +72,15 @@ curl 'https://onetoken.one/v1/chat/completions' \
   }'
 ```
 
-:::
+</CodeGroup>
 
 支持流式调用，只需要增加参数 `stream: true`
 
 ## 使用 OpenAI SDK
 
-其中 `<Onetoken_API_KEY>` 替换为 [Onetoken Key](https://onetoken.one/token)，注意 `key` 的有效期和额度限制。 可使用的 `model` 列表，可查阅 [模型广场](https://onetoken.one/models) ，复制模型名称替换即可。
+其中 `<Onetoken_API_KEY>` 替换为 [Onetoken Key](https://onetoken.one/console/token)，注意 `key` 的有效期和额度限制。 可使用的 `model` 列表，可查阅 [模型广场](https://onetoken.one/pricing) ，复制模型名称替换即可。
 
-::: code-group
+<CodeGroup>
 
 ```py [Python]
 from openai import OpenAI
@@ -139,7 +139,7 @@ async function main() {
 main();
 ```
 
-:::
+</CodeGroup>
 
 对于支持搜索的模型，可以追加下方参数来支持：
 
@@ -149,6 +149,4 @@ main();
 
 可用模型：`gpt-4o-search-preview`、`gpt-4o-mini-search-preview`。
 
-::: info
-注意搜索模型暂不支持 `temperature` 等细节参数。
-:::
+<Info>注意搜索模型暂不支持 `temperature` 等细节参数。</Info>
