@@ -112,7 +112,9 @@
                   "zh/guide/chat/ChatGPT",
                   "zh/guide/chat/Anthropic Claude",
                   "zh/guide/chat/ChatGPT嵌入（Embeddings）",
-                  "zh/guide/chat/ChatGPT自动补全（Completions）"
+                  "zh/guide/chat/ChatGPT自动补全（Completions）",
+                  "zh/api/texts/general/chat-completions",
+                  "zh/api/texts/general/claude-messages"
                 ]
               }
             ]
