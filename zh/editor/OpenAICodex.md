@@ -1,6 +1,7 @@
 ---
 title: OpenAI Codex
-icon: code
+icon: openai
+iconType: brands
 ---
 
 > 通过 OneToken API 使用 Codex

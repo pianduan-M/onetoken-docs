@@ -138,7 +138,8 @@
               "zh/editor/dify",
               "zh/editor/CherryStudio",
               "zh/editor/CherryStudioMcp",
-              "zh/editor/CherryStudioO4"
+              "zh/editor/CherryStudioO4",
+              "zh/editor/WorkBuddy"
             ]
           },
           {
@@ -274,7 +275,8 @@
               "en/editor/dify",
               "en/editor/CherryStudio",
               "en/editor/CherryStudioMcp",
-              "en/editor/CherryStudioO4"
+              "en/editor/CherryStudioO4",
+              "en/editor/WorkBuddy"
             ]
           },
           {

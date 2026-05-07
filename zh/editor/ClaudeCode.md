@@ -1,6 +1,6 @@
 ---
 title: Claude Code
-icon: code
+icon: object-exclude
 ---
 
 > 在 Onetoken 中使用 Claude Code

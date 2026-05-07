@@ -1,6 +1,7 @@
 ---
 title: OpenClaw
-icon: code
+icon: lobster
+iconType: duotone
 ---
 
 > OpenClaw 是一个开源的智能体平台，可在你的本地机器上运行，并能通过你已经在使用的聊天应用来工作。
