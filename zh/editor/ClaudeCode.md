@@ -250,7 +250,7 @@ export DEFAULT_HAIKU_MODEL="claude-haiku-4-5"
     <img src="/images/claudecode/6.png" alt="I Shot 2026 03 25 11 53 07" width="1156" height="304" data-path="images/iShot_2026-03-25_11.53.07.jpg" />
 </Frame>
 
-### 在 claude code 中使用 deepseek 模型
+## 在 claude code 中使用 deepseek 模型
 
 可用模型 `deepseek-r1-distill-qwen-14b` `deepseek-v3` `deepseek-v3-0324` `deepseek-v3-1-250821` `deepseek-v3.2` `deepseek-v4-flash` `deepseek-v4-pro`
 
