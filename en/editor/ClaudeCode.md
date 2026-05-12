@@ -242,6 +242,32 @@ export DEFAULT_HAIKU_MODEL="claude-haiku-4-5"
     <img src="/images/claudecode/6.png" alt="I Shot 2026 03 25 11 53 07" width="1156" height="304" data-path="images/iShot_2026-03-25_11.53.07.jpg" />
 </Frame>
 
+### Using the deepseek model in Claude code
+
+Available models `deepseek-r1-distill-qwen-14b` `deepseek-v3` `deepseek-v3-0324` `deepseek-v3-1-250821` `deepseek-v3.2` `deepseek-v4-flash` `deepseek-v4-pro`
+
+Method 1: Directly modify the configuration file
+
+Locate the `.claude.json` file in the user's home directory. The specific path is as follows:
+
+- macOS / Linux: `~/.claude.json`
+- Windows: `C:\Users\%USERNAME%\.claude.json`
+
+Change the value of `ANTHROPIC_MODEL` to the name of the deepseek model.
+
+```json theme={null}
+{
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "sk-**",
+    "ANTHROPIC_BASE_URL": "https://onetoken.one",
+    "ANTHROPIC_MODEL": "deepseek-v4-pro"
+  },
+  "includeCoAuthoredBy": false
+}
+```
+
+Method 2: Directly modify the configuration file using CC Switch. change the model name to the DeepSeek model name, and then restart Claude Code.
+
 ## FAQ
 
 ### Q: `401 , No token provided...`
@@ -293,6 +319,5 @@ Newer Claude Code builds expect **`AUTH_TOKEN`** instead of `API_KEY`. Update th
 <img src="/images/claudecode/7.png" />
 
 Upgrade Claude Code to the latest version and disable CC-Switch local proxy / failover if enabled.
-
 
 Happy coding!

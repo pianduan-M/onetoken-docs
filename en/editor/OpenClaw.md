@@ -66,3 +66,55 @@ Select all `No` where shown
 <img src="https://mintcdn.com/aihubmix/WotSdjzuAai7hVOs/public/cn/oc-11.png?fit=max&auto=format&n=WotSdjzuAai7hVOs&q=85&s=1473f71f42c750cf132f321f9b4bc5bb" alt="Oc 11" width="1212" height="814" data-path="public/cn/oc-11.png" />
 
 Choose `Hatch in UI`
+
+### 修改配置文件
+
+打开 ~/.openclaw/openclaw.json 文件，增加以下配置：
+
+```
+{
+"models": {
+    "mode": "merge",
+    "providers": {
+      "onetoken": {
+        "baseUrl": "https://onetoken.one/v1",
+        "apiKey": "API_KEY",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "claude-sonnet-4-5",
+            "name": "claude-sonnet-4-5",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 1000000,
+            "maxTokens": 64000
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "onetoken/claude-sonnet-4-5"
+      },
+      "workspace": "your_workspace_path",
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    }
+  }
+}
+```

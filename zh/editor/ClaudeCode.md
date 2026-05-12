@@ -250,6 +250,32 @@ export DEFAULT_HAIKU_MODEL="claude-haiku-4-5"
     <img src="/images/claudecode/6.png" alt="I Shot 2026 03 25 11 53 07" width="1156" height="304" data-path="images/iShot_2026-03-25_11.53.07.jpg" />
 </Frame>
 
+### 在 claude code 中使用 deepseek 模型
+
+可用模型 `deepseek-r1-distill-qwen-14b` `deepseek-v3` `deepseek-v3-0324` `deepseek-v3-1-250821` `deepseek-v3.2` `deepseek-v4-flash` `deepseek-v4-pro`
+
+方式一: 直接修配置文件
+
+定位用户主目录下的 `.claude.json` 文件，具体路径如下：
+
+- macOS / Linux: `~/.claude.json`
+- Windows: `C:\Users\%USERNAME%\.claude.json`
+
+把 `ANTHROPIC_MODEL` 的值修改成 deepseek 的模型名
+
+```json theme={null}
+{
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "sk-**",
+    "ANTHROPIC_BASE_URL": "https://onetoken.one",
+    "ANTHROPIC_MODEL": "deepseek-v4-pro"
+  },
+  "includeCoAuthoredBy": false
+}
+```
+
+方式二：直接使用 CC Switch 修改配置文件，模型名改为 deepseek 的模型名，重启 claude code 即可。
+
 ## 常见问题
 
 ### Q：在 Claude Code 中使用，提示「401 , No token provided....」
