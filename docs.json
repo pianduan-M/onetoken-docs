@@ -123,6 +123,7 @@
             "tab": "开发工具",
             "pages": [
               "zh/editor/ClaudeCode",
+              "zh/editor/Costrict",
               "zh/editor/Cursor",
               "zh/editor/OpenCode",
               "zh/editor/OpenClaw",
@@ -139,8 +140,7 @@
               "zh/editor/CherryStudio",
               "zh/editor/CherryStudioMcp",
               "zh/editor/CherryStudioO4",
-              "zh/editor/WorkBuddy",
-              "zh/editor/Costrict"
+              "zh/editor/WorkBuddy"
             ]
           },
           {

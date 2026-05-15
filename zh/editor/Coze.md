@@ -1,5 +1,5 @@
 ---
-title: coze 配置教程
+title: Coze 配置教程
 icon: code
 ---
 

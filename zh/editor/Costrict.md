@@ -1,5 +1,5 @@
 ---
-title: costrict 配置教程
+title: Costrict 配置教程
 icon: code
 ---
 

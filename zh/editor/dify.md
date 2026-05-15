@@ -1,5 +1,5 @@
 ---
-title: dify添加模型
+title: Dify 添加模型
 icon: code
 ---
 
