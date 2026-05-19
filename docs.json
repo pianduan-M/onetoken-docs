@@ -116,6 +116,13 @@
                   "zh/api/texts/general/chat-completions",
                   "zh/api/texts/general/claude-messages"
                 ]
+              },
+              {
+                "group": "隐私和条款",
+                "pages": [
+                  "zh/guide/termsAndPrivacy/termsOfService",
+                  "zh/guide/termsAndPrivacy/privacyPolicy"
+                ]
               }
             ]
           },
@@ -255,6 +262,13 @@
                   "en/guide/chat/Anthropic Claude",
                   "en/guide/chat/ChatGPT嵌入（Embeddings）",
                   "en/guide/chat/ChatGPT自动补全（Completions）"
+                ]
+              },
+              {
+                "group": "Privacy and terms",
+                "pages": [
+                  "en/guide/termsAndPrivacy/termsOfService",
+                  "en/guide/termsAndPrivacy/privacyPolicy"
                 ]
               }
             ]
