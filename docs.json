@@ -263,6 +263,7 @@
             "tab": "Developer tools",
             "pages": [
               "en/editor/ClaudeCode",
+              "zh/editor/Costrict",
               "en/editor/Cursor",
               "en/editor/OpenCode",
               "en/editor/OpenClaw",
