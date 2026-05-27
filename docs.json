@@ -147,7 +147,8 @@
               "zh/editor/CherryStudio",
               "zh/editor/CherryStudioMcp",
               "zh/editor/CherryStudioO4",
-              "zh/editor/WorkBuddy"
+              "zh/editor/WorkBuddy",
+              "zh/editor/Hamers"
             ]
           },
           {
@@ -292,7 +293,8 @@
               "en/editor/CherryStudio",
               "en/editor/CherryStudioMcp",
               "en/editor/CherryStudioO4",
-              "en/editor/WorkBuddy"
+              "en/editor/WorkBuddy",
+              "en/editor/Hamers"
             ]
           },
           {
