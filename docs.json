@@ -62,7 +62,8 @@
                       "zh/guide/image/nano-banana/Gemini",
                       "zh/guide/image/nano-banana/OpenAI"
                     ]
-                  }
+                  },
+                  "zh/guide/image/gpt-image-2"
                 ]
               },
               {
@@ -213,7 +214,8 @@
                       "en/guide/image/nano-banana/Gemini",
                       "en/guide/image/nano-banana/OpenAI"
                     ]
-                  }
+                  },
+                  "en/guide/image/gpt-image-2"
                 ]
               },
               {
