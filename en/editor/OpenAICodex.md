@@ -77,22 +77,22 @@ codex
 
 2. Set permissions as prompted.
 
-<img src="https://mintcdn.com/aihubmix/7hQ6_nS3fMExXVXm/public/cn/codex-5.png?fit=max&auto=format&n=7hQ6_nS3fMExXVXm&q=85&s=ae7c5f193d3aa5c8723c879840732d78" alt="Codex 5" width="1212" height="814" data-path="public/cn/codex-5.png" />
+<img src="/images/OpenAICodex/1.webp" alt="Codex 5" width="1212" height="814" data-path="public/cn/codex-5.png" />
 
 3. Choose a model.
 
-<img src="https://mintcdn.com/aihubmix/7hQ6_nS3fMExXVXm/public/cn/codex-6.png?fit=max&auto=format&n=7hQ6_nS3fMExXVXm&q=85&s=f942ebc707063463a3961347f8379553" alt="Codex 6" width="1212" height="814" data-path="public/cn/codex-6.png" />
+<img src="/images/OpenAICodex/2.webp" alt="Codex 6" width="1212" height="814" data-path="public/cn/codex-6.png" />
 
 4. Type a natural-language task—if you get a reply, setup works.
 
-<img src="https://mintcdn.com/aihubmix/7hQ6_nS3fMExXVXm/public/cn/codex-8.png?fit=max&auto=format&n=7hQ6_nS3fMExXVXm&q=85&s=bf06aaa8c86834b20e5fef26fba84d50" alt="Codex 8" width="1212" height="814" data-path="public/cn/codex-8.png" />
+<img src="/images/OpenAICodex/3.webp" alt="Codex 8" width="1212" height="814" data-path="public/cn/codex-8.png" />
 
 ### Desktop app
 
 1. Open Codex, pick a workspace folder.
 2. Enter a task—if it responds, you’re good.
 
-<img src="https://mintcdn.com/aihubmix/7hQ6_nS3fMExXVXm/public/cn/codex-9.png?fit=max&auto=format&n=7hQ6_nS3fMExXVXm&q=85&s=673289a767cd354a686d1e547a364e0d" alt="Codex 9" width="2632" height="1712" data-path="public/cn/codex-9.png" />
+<img src="/images/OpenAICodex/4.webp" alt="Codex 9" width="2632" height="1712" data-path="public/cn/codex-9.png" />
 
 ## CLI reference
 

@@ -145,7 +145,7 @@ $ cd /path/your-project
 
 初次使用 Claude Code 时，可能会强制要求登录 Anthropic 账户。请按以下步骤操作以跳过该流程：
 
-<img src="https://mintcdn.com/aihubmix/HZpz50Qb6hBBcBVb/public/cn/cc-7.jpg?fit=max&auto=format&n=HZpz50Qb6hBBcBVb&q=85&s=0d1309bcea8f4170809d104bc2b380a6" alt="Cc 7" width="1622" height="438" data-path="public/cn/cc-7.jpg" />
+<img src="/images/ClaudeCode-doc/1.webp" alt="Cc 7" width="1622" height="438" data-path="public/cn/cc-7.jpg" />
 
 1. 定位用户主目录下的 `.claude.json` 文件，具体路径如下：
    - macOS / Linux: `~/.claude.json`
@@ -229,19 +229,19 @@ export DEFAULT_HAIKU_MODEL="claude-haiku-4-5"
 1. 运行 VS Code，安装插件。
 
 <Frame>
-    <img src="https://mintcdn.com/aihubmix/XPAbnoWWzjetSWAU/images/iShot_2026-03-25_11.44.03.jpg?fit=max&auto=format&n=XPAbnoWWzjetSWAU&q=85&s=7fd42add3df2e072c3d8d85eb19c785d" alt="I Shot 2026 03 25 11 44 03" width="1958" height="724" data-path="images/iShot_2026-03-25_11.44.03.jpg" />
+    <img src="/images/ClaudeCode-doc/2.webp" alt="I Shot 2026 03 25 11 44 03" width="1958" height="724" data-path="images/iShot_2026-03-25_11.44.03.jpg" />
 </Frame>
 
 2. 按下 `Ctrl + Shift + P` (或 `Cmd + Shift + P`)，输入 `Settings` 打开设置。
 
 <Frame>
-    <img src="https://mintcdn.com/aihubmix/XPAbnoWWzjetSWAU/images/iShot_2026-03-25_11.47.48.jpg?fit=max&auto=format&n=XPAbnoWWzjetSWAU&q=85&s=c7b448a36e1886a4a1cdc9103f3844f6" alt="I Shot 2026 03 25 11 47 48" width="1772" height="976" data-path="images/iShot_2026-03-25_11.47.48.jpg" />
+    <img src="/images/ClaudeCode-doc/3.webp" alt="I Shot 2026 03 25 11 47 48" width="1772" height="976" data-path="images/iShot_2026-03-25_11.47.48.jpg" />
 </Frame>
 
 3. 搜索 `Claude Code` ，找到 `Claude Code: Environment Variable` → `Edit in settings.json` 。
 
 <Frame>
-    <img src="https://mintcdn.com/aihubmix/XPAbnoWWzjetSWAU/images/iShot_2026-03-25_11.49.37.jpg?fit=max&auto=format&n=XPAbnoWWzjetSWAU&q=85&s=3f5a87bc619bcb552eb4ed78da6527b6" alt="I Shot 2026 03 25 11 49 37" width="1940" height="1248" data-path="images/iShot_2026-03-25_11.49.37.jpg" />
+    <img src="/images/ClaudeCode-doc/4.webp" alt="I Shot 2026 03 25 11 49 37" width="1940" height="1248" data-path="images/iShot_2026-03-25_11.49.37.jpg" />
 </Frame>
 
 4. 在 `claudeCode.environmentVariables` 中填入 Onetoken 相关信息。
@@ -282,7 +282,7 @@ export DEFAULT_HAIKU_MODEL="claude-haiku-4-5"
 
 打开 Claude 终端，输入 `/config` ，找到 `Use custom API key` 选项，检查 Token 是否正确配置。
 
-<img src="https://mintcdn.com/aihubmix/Sq3QhNkLGyt6npNr/public/cn/cc-6.png?fit=max&auto=format&n=Sq3QhNkLGyt6npNr&q=85&s=27b1369c8b3970c789b7585e060bde07" alt="install" width="1220" height="760" data-path="public/cn/cc-6.png" />
+<img src="/images/ClaudeCode-doc/5.webp" alt="install" width="1220" height="760" data-path="public/cn/cc-6.png" />
 
 ### Q：macOS 中安装成功后仍然报错：`zsh: command not found: claude`
 

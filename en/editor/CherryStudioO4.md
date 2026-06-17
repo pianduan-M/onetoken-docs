@@ -3,16 +3,16 @@ title: CherryStudio o4 reasoning level setup
 icon: code
 ---
 
-![image.png](https://api.apifox.com/api/v1/projects/5443236/resources/535134/image-preview)
+![image.png](/images/CherryStudioO4/1.png)
 
-![image.png](https://api.apifox.com/api/v1/projects/5443236/resources/535135/image-preview)
+![image.png](/images/CherryStudioO4/2.png)
 
-![image.png](https://api.apifox.com/api/v1/projects/5443236/resources/551440/image-preview)
+![image.png](/images/CherryStudioO4/3.png)
 
 ## Configure extra parameter `reasoning_effort`
 
 For o-series models, the currently supported values are `low`, `medium`, and `high`.
 
-![image.png](https://api.apifox.com/api/v1/projects/5443236/resources/551453/image-preview)
+![image.png](/images/CherryStudioO4/4.png)
 
 ## Then you can send requests

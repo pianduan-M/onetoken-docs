@@ -3,12 +3,12 @@ title: Create a token for a specific group
 icon: circle-plus
 ---
 
-![1.png](https://api.apifox.com/api/v1/projects/5443236/resources/564771/image-preview)
+![1.png](/images/new-token/1.png)
 
-![2.png](https://api.apifox.com/api/v1/projects/5443236/resources/564772/image-preview)
+![2.png](/images/new-token/2.png)
 
-![3.png](https://api.apifox.com/api/v1/projects/5443236/resources/564773/image-preview)
+![3.png](/images/new-token/3.png)
 
-![4.png](https://api.apifox.com/api/v1/projects/5443236/resources/564774/image-preview)
+![4.png](/images/new-token/4.png)
 
-![5.png](https://api.apifox.com/api/v1/projects/5443236/resources/564775/image-preview)
+![5.png](/images/new-token/5.png)

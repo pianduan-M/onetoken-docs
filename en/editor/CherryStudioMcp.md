@@ -13,30 +13,30 @@ https://docs.cherry-ai.com/advanced-basic/mcp
 
 ## 3. Configure relay
 
-![image.png](https://api.apifox.com/api/v1/projects/5443236/resources/512908/image-preview)
+![image.png](/images/CherryStudioMcp/1.png)
 
 ## 4. Configure API key
 
-![image.png](https://api.apifox.com/api/v1/projects/5443236/resources/551402/image-preview)
+![image.png](/images/CherryStudioMcp/2.png)
 
 **_Set API URL to: https://onetoken.one_**
 
 ## 5. Configure model
 
-![image.png](https://api.apifox.com/api/v1/projects/5443236/resources/512911/image-preview)
+![image.png](/images/CherryStudioMcp/3.png)
 
-![image.png](https://api.apifox.com/api/v1/projects/5443236/resources/512912/image-preview)
+![image.png](/images/CherryStudioMcp/4.png)
 
-![image.png](https://api.apifox.com/api/v1/projects/5443236/resources/551413/image-preview)
+![image.png](/images/CherryStudioMcp/5.png)
 
 ## 6. Enable MCP
 
-![image.png](https://api.apifox.com/api/v1/projects/5443236/resources/512914/image-preview)
+![image.png](/images/CherryStudioMcp/6.png)
 
-![image.png](https://api.apifox.com/api/v1/projects/5443236/resources/512915/image-preview)
+![image.png](/images/CherryStudioMcp/7.png)
 
 ## Send request
 
-![image.png](https://api.apifox.com/api/v1/projects/5443236/resources/512916/image-preview)
+![image.png](/images/CherryStudioMcp/8.png)
 
 MCP call succeeded.

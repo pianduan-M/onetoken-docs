@@ -46,7 +46,7 @@ qwen
 
 After launch, run `/about` to confirm version and model:
 
-<img src="https://mintcdn.com/aihubmix/UgvkHPDoK6o04763/public/cn/Qwen-code.png?fit=max&auto=format&n=UgvkHPDoK6o04763&q=85&s=fbf0fe0ae179a4a00c1842a068144a8d" alt="about" width="1990" height="2034" data-path="public/cn/Qwen-code.png" />
+<img src="/images/QwenCode/1.webp" alt="about" width="1990" height="2034" data-path="public/cn/Qwen-code.png" />
 
 <Note>
   Some users report occasional stalls—consider a **limited quota** on your [key](https://onetoken.one/token) to cap spend.

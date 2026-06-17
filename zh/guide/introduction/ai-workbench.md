@@ -17,7 +17,7 @@ AI 智能工作台是一个**前端应用**，用于调用 OneToken 提供的 **
 
 ---
 
-![11.png](https://api.apifox.com/api/v1/projects/7459198/resources/621010/image-preview)
+![11.png](/images/ai-workbench/1.png)
 
 ## 1. 开始前准备
 

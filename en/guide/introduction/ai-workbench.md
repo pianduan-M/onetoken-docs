@@ -17,7 +17,7 @@ The AI workbench is a **web app** that uses your OneToken **LLM API key** to:
 
 ---
 
-![11.png](https://api.apifox.com/api/v1/projects/7459198/resources/621010/image-preview)
+![11.png](/images/ai-workbench/1.png)
 
 ## 1. Prerequisites
 

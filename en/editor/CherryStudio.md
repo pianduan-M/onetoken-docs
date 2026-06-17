@@ -5,18 +5,18 @@ icon: code
 
 Client download page: https://www.cherry-ai.com/
 
-![image.png](https://api.apifox.com/api/v1/projects/5443236/resources/525125/image-preview)
+![image.png](/images/CherryStudio/1.png)
 
 ## Configure endpoint and key
 
-![image.png](https://api.apifox.com/api/v1/projects/5443236/resources/551402/image-preview)
+![image.png](/images/CherryStudio/2.png)
 
 **_Set API URL to: https://onetoken.one_**
 
 ## Add model
 
-![image.png](https://api.apifox.com/api/v1/projects/5443236/resources/551431/image-preview)
+![image.png](/images/CherryStudio/3.png)
 
 ## Select model and use it
 
-![image.png](https://api.apifox.com/api/v1/projects/5443236/resources/495268/image-preview)
+![image.png](/images/CherryStudio/4.png)
