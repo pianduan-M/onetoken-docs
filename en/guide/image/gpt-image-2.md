@@ -100,11 +100,34 @@ This endpoint is used to modify an existing image. You need to provide an **orig
 
 ### Request Information
 
+<ParamField path="POST" type="/v1/images/edits/" required>
+  Standard OpenAI-compatible image editing path.
+</ParamField>
+
 ### Request Format
 
 multipart/form-data
 
 ### Request Parameters
+
+<ParamField body="model" type="string" required>
+  Must be set to `gpt-image-2`.
+</ParamField>
+<ParamField body="prompt" type="string" required>
+  A description of the desired image. Both English and Chinese are supported.
+</ParamField>
+<ParamField body="n" type="integer" default="1">
+  The number of images to generate.
+</ParamField>
+<ParamField body="size" type="string" default="1024x1024">
+  The image resolution, such as `1024x1024` or `512x512`.
+</ParamField>
+<ParamField body="response_format" type="string" default="b64_json">
+  The response format for generated images. Must be `url` or `b64_json`.
+</ParamField>
+<ParamField body="image" type="file" default="">
+  The images to edit. You can provide up to 16 images.
+</ParamField>
 
 ### Code Examples
 
@@ -133,6 +156,21 @@ response = requests.request("POST", url, data = body, headers = {
 
 print(response.text)
 
+```
+
+```javascript JavaScript
+const body = new FormData();
+body.append("image", file1);
+body.append("image", file2);
+body.append("prompt", "A cute baby sea otter wearing a beret.");
+
+fetch("https://api.onetoken.one/v1/images/edits/", {
+  method: "POST",
+  headers: {
+    Authorization: "Bearer sk-xxxxxxxxxxxx",
+  },
+  body,
+});
 ```
 
 </CodeGroup>

@@ -126,7 +126,7 @@ multipart/form-data
    生成的图像返回的格式。必须是url或b64_json。
   </ParamField>
   <ParamField body="image" type="file" default="">
-   要编辑的图像。必须是有效的 PNG 文件，小于 4MB，并且是方形的。如果未提供遮罩，图像必须具有透明度，将用作遮罩。
+   要编辑的图像。理论支持最多 16 张
   </ParamField>
 
 ### 代码示例
@@ -156,6 +156,22 @@ response = requests.request("POST", url, data = body, headers = {
 
 print(response.text)
 
+```
+
+```javascript javascript
+const body = new FormData();
+body.append(image, "file1.png");
+body.append(image, "file2.png");
+body.append(prompt, "A cute baby sea otter wearing a beret.");
+
+fetch("https://api.onetoken.one/v1/images/edits/", {
+  method: "POST",
+  headers: {
+    "Content-Type": "multipart/form-data",
+    Authorization: "Bearer ",
+  },
+  body,
+});
 ```
 
 </CodeGroup>
