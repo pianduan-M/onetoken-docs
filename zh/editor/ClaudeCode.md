@@ -195,6 +195,8 @@ export DEFAULT_HAIKU_MODEL="claude-haiku-4-5"
 ```json theme={null}
 {
   "env": {
+    "ANTHROPIC_AUTH_TOKEN": "api key",
+    "ANTHROPIC_BASE_URL": "https://onetoken.one",
     "DEFAULT_OPUS_MODEL": "claude-opus-4-5",
     "DEFAULT_SONNET_MODEL": "claude-sonnet-4-5",
     "DEFAULT_HAIKU_MODEL": "claude-haiku-4-5"
@@ -337,5 +339,17 @@ claude -v
 <img src="/images/claudecode/7.png" />
 
 cc升级到最新版，并且关闭ccs的本地代理跟故障转移功能
+
+### Q：如何开启 1 小时缓存
+
+1.打开全局配置文件~/.claude/settings.json(或项目目录下的.claude/settings.json );\
+
+2.添加 env字段:
+
+```
+
+{ "env": { "ENABLE_PROMPT_CACHING_1H": "1" } }
+
+```
 
 祝你使用愉快！

@@ -320,4 +320,16 @@ Newer Claude Code builds expect **`AUTH_TOKEN`** instead of `API_KEY`. Update th
 
 Upgrade Claude Code to the latest version and disable CC-Switch local proxy / failover if enabled.
 
+### Q: How to enable 1-hour caching
+
+1. Open the global configuration file ~/.claude/settings.json (or .claude/settings.json in the project directory);
+
+2. Add the env field:
+
+```
+
+{ "env": { "ENABLE_PROMPT_CACHING_1H": "1" } }
+
+```
+
 Happy coding!
