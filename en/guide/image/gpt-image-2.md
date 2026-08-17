@@ -1,7 +1,7 @@
 ---
 title: "gpt-image-2 Model API Tutorial"
 sidebarTitle: "gpt-image-2"
-description: "Quickly master the Text-to-Image and Image Editing APIs for the gpt-image-2 model via NewAPI."
+description: "Quickly master the text-to-image and image editing APIs of the gpt-image-2 model."
 ---
 
 ## Prerequisites

@@ -103,7 +103,8 @@
                       "zh/guide/video/veo/video-generation-i2v",
                       "zh/guide/video/veo/video-generation-query"
                     ]
-                  }
+                  },
+                  "zh/guide/video/MiniMax-H3"
                 ]
               },
               {
@@ -255,7 +256,8 @@
                       "en/guide/video/veo/video-generation-i2v",
                       "en/guide/video/veo/video-generation-query"
                     ]
-                  }
+                  },
+                  "en/guide/video/MiniMax-H3"
                 ]
               },
               {

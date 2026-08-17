@@ -1,7 +1,7 @@
 ---
 title: "gpt-image-2 模型调用教程"
 sidebarTitle: "gpt-image-2"
-description: "快速掌握通过 NewAPI 调用 gpt-image-2 模型的文生图与图像编辑接口"
+description: "快速掌握通过调用 gpt-image-2 模型的文生图与图像编辑接口"
 ---
 
 ## 准备工作
