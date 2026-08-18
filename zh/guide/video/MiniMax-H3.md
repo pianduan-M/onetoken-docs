@@ -362,29 +362,6 @@ HTTP 状态码：`200`
       "input": "",
       "upstream_model_name": "MiniMax-H3",
       "origin_model_name": "MiniMax-H3"
-    },
-    "data": {
-      "task": {
-        "id": "424010985738629",
-        "model": "MiniMax-H3",
-        "status": "succeeded",
-        "created_at": 1786939200,
-        "updated_at": 1786939260,
-        "content": {
-          "url": "https://example.com/generated/minimax-h3-output.mp4"
-        },
-        "resolution": "2K",
-        "duration": 5,
-        "usage": {
-          "total_seconds": 5,
-          "input_seconds": 0,
-          "output_seconds": 5,
-          "input_image_count": 0
-        },
-        "ratio": "16:9",
-        "task_type": "generation",
-        "modality": "video"
-      }
     }
   }
 }
