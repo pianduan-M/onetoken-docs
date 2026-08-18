@@ -47,13 +47,8 @@ MiniMax-H3 支持文本、图片、视频和音频等多模态输入，可生成
 ```json
 {
   "model": "MiniMax-H3",
+  "prompt": "描述你想生成的视频",
   "metadata": {
-    "content": [
-      {
-        "type": "text",
-        "text": "描述你想生成的视频"
-      }
-    ],
     "resolution": "2K",
     "duration": 5,
     "ratio": "16:9",
@@ -124,13 +119,8 @@ MiniMax-H3 支持文本、图片、视频和音频等多模态输入，可生成
 ```json
 {
   "model": "MiniMax-H3",
+  "prompt": "史诗级太空歌剧院线预告：女舰长独自站在巨大观景窗前，最后一支舰队正在集结并跃迁离去，强光爆闪、舰桥震动，她被留在原地。",
   "metadata": {
-    "content": [
-      {
-        "type": "text",
-        "text": "史诗级太空歌剧院线预告：女舰长独自站在巨大观景窗前，最后一支舰队正在集结并跃迁离去，强光爆闪、舰桥震动，她被留在原地。"
-      }
-    ],
     "resolution": "2K",
     "duration": 5,
     "ratio": "16:9",
@@ -146,12 +136,9 @@ MiniMax-H3 支持文本、图片、视频和音频等多模态输入，可生成
 ```json
 {
   "model": "MiniMax-H3",
+  "prompt": "镜头缓慢推进，人物转身看向远处，衣摆随风自然摆动。",
   "metadata": {
     "content": [
-      {
-        "type": "text",
-        "text": "镜头缓慢推进，人物转身看向远处，衣摆随风自然摆动。"
-      },
       {
         "type": "image_url",
         "image_url": {
@@ -181,12 +168,9 @@ MiniMax-H3 支持文本、图片、视频和音频等多模态输入，可生成
 ```json
 {
   "model": "MiniMax-H3",
+  "prompt": "角色面对镜头说：Follow the wind, live free. 音色参考音频 1，动作和构图参考所提供的视频与图片",
   "metadata": {
     "content": [
-      {
-        "type": "text",
-        "text": "角色面对镜头说：Follow the wind, live free. 音色参考音频 1，动作和构图参考所提供的视频与图片。"
-      },
       {
         "type": "image_url",
         "image_url": {
@@ -274,13 +258,8 @@ curl -X POST "https://api.onetoken.one/v1/video/generations" \
   -H "Content-Type: application/json" \
   -d '{
     "model": "MiniMax-H3",
+    "prompt":"电影感航拍镜头掠过雨后的未来城市，霓虹灯倒映在街道上。",
     "metadata": {
-      "content": [
-        {
-          "type": "text",
-          "text": "电影感航拍镜头掠过雨后的未来城市，霓虹灯倒映在街道上。"
-        }
-      ],
       "resolution": "2K",
       "duration": 5,
       "ratio": "16:9",
