@@ -151,7 +151,8 @@
               "zh/editor/CherryStudioO4",
               "zh/editor/WorkBuddy",
               "zh/editor/Hamers",
-              "zh/editor/Coder"
+              "zh/editor/Coder",
+              "zh/editor/DeepseekHarness"
             ]
           },
           {
@@ -300,7 +301,8 @@
               "en/editor/CherryStudioO4",
               "en/editor/WorkBuddy",
               "en/editor/Hamers",
-              "en/editor/Coder"
+              "en/editor/Coder",
+              "en/editor/DeepseekHarness"
             ]
           },
           {
