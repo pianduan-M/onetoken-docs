@@ -73,14 +73,14 @@ codex --version
     `model_reasoning_effort` 可选值为 `high`, `medium`, `low`，分别代表模型思考的努力程度（高、中、低）。
 
     ```toml
-    model_provider = "api111"
+    model_provider = "onetoken"
     model = "gpt-5-codex"
     model_reasoning_effort = "high"
     disable_response_storage = true
     preferred_auth_method = "apikey"
 
-    [model_providers.api111]
-    name = "api111"
+    [model_providers.onetoken]
+    name = "onetoken"
     base_url = "https://onetoken.one/v1"
     wire_api = "responses"
     ```
@@ -197,14 +197,14 @@ codex --version
     按 `i` 进入插入模式，粘贴以下内容，然后按 `ESC` 键，输入 `:wq` 并回车保存退出。
 
     ```toml
-    model_provider = "api111"
+    model_provider = "onetoken"
     model = "gpt-5-codex"
     model_reasoning_effort = "high"
     disable_response_storage = true
     preferred_auth_method = "apikey"
 
-    [model_providers.api111]
-    name = "api111"
+    [model_providers.onetoken]
+    name = "onetoken"
     base_url = "https://onetoken.one/v1"
     wire_api = "responses"
     ```
@@ -321,14 +321,14 @@ codex --version
     按 `i` 进入插入模式，粘贴以下内容，然后按 `ESC` 键，输入 `:wq` 并回车保存退出。
 
     ```toml
-    model_provider = "api111"
+    model_provider = "onetoken"
     model = "gpt-5-codex"
     model_reasoning_effort = "high"
     disable_response_storage = true
     preferred_auth_method = "apikey"
 
-    [model_providers.api111]
-    name = "api111"
+    [model_providers.onetoken]
+    name = "onetoken"
     base_url = "https://onetoken.one/v1"
     wire_api = "responses"
     ```
