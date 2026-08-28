@@ -83,6 +83,8 @@ codex --version
     name = "onetoken"
     base_url = "https://onetoken.one/v1"
     wire_api = "responses"
+    requires_openai_auth = true
+    supports_websockets = false
     ```
 
 ### 启动 codex
@@ -207,6 +209,8 @@ codex --version
     name = "onetoken"
     base_url = "https://onetoken.one/v1"
     wire_api = "responses"
+    requires_openai_auth = true
+    supports_websockets = false
     ```
 
 ### 启动 codex
@@ -331,6 +335,8 @@ codex --version
     name = "onetoken"
     base_url = "https://onetoken.one/v1"
     wire_api = "responses"
+    requires_openai_auth = true
+    supports_websockets = false
     ```
 
 ### 启动 codex
