@@ -122,8 +122,8 @@ multipart/form-data
   <ParamField body="size" type="string" default="1024x1024">
     图片分辨率，例如 `1024x1024` 或 `512x512`。宽高都要传 16 的倍数
   </ParamField>
-  <ParamField body="response_format" type="string" default="b64_json">
-   生成的图像返回的格式。必须是url或b64_json。
+  <ParamField body="output_format" type="string" default="png">
+   生成的图像返回的格式。png、jpeg或webp。
   </ParamField>
   <ParamField body="image" type="file" default="">
    要编辑的图像。理论支持最多 16 张

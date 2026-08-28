@@ -122,8 +122,8 @@ multipart/form-data
 <ParamField body="size" type="string" default="1024x1024">
   The image resolution, such as `1024x1024` or `512x512`.
 </ParamField>
-<ParamField body="response_format" type="string" default="b64_json">
-  The response format for generated images. Must be `url` or `b64_json`.
+<ParamField body="output_format" type="string" default="png">
+The format in which the generated images are returned. This parameter is only supported for the GPT image models. Must be one of png, jpeg, or webp.
 </ParamField>
 <ParamField body="image" type="file" default="">
   The images to edit. You can provide up to 16 images.
