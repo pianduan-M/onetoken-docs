@@ -27,16 +27,20 @@ npm install -g @openai/codex
 ```toml theme={null}
 profile = "OneToken"
 
+[profiles.OneToken]
+model = "gpt-5.2"
+model_provider = "OneToken"
+model_reasoning_effort = "high"
+
 [model_providers.OneToken]
 name = "OneToken"
 base_url = "https://onetoken.one/v1"
 personality = "pragmatic"
 wire_api = "responses"
+requires_openai_auth = true
+supports_websockets = false
 
-[profiles.OneToken]
-model = "gpt-5.2"
-model_provider = "OneToken"
-model_reasoning_effort = "high"
+
 ```
 
 2. 修改 ` ~/.codex/auth.json` 配置文件，修改如下配置：
