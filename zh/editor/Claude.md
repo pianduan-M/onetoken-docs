@@ -1,6 +1,6 @@
 ---
 title: Claude 桌面版
-icon: code
+icon: claude
 ---
 
 保持未登录状态（或先退出账号）
