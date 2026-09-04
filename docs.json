@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "maple",
+  "theme": "mint",
   "name": "onetoken docs",
   "colors": {
     "primary": "#2a56dd",
@@ -141,7 +141,6 @@
               "zh/editor/VoidEditor",
               "zh/editor/Clawx",
               "zh/editor/RikkaHub",
-              "zh/editor/Codex",
               "zh/editor/Claude",
               "zh/editor/Coze",
               "zh/editor/cline",

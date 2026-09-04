@@ -1,5 +1,5 @@
 ---
-title: OpenAI Codex
+title: Codex
 icon: openai
 iconType: brands
 ---
@@ -42,9 +42,9 @@ codex --version
 
 Codex 使用两个文件保存自定义服务商配置：
 
-| 文件 | 作用 |
-| --- | --- |
-| `auth.json` | 保存 API Key |
+| 文件          | 作用                                 |
+| ------------- | ------------------------------------ |
+| `auth.json`   | 保存 API Key                         |
 | `config.toml` | 保存服务商、接口地址、模型和推理强度 |
 
 默认配置目录为 `~/.codex`。如果你设置了 `CODEX_HOME` 环境变量，Codex 会改用该变量指向的目录；下方平台路径均以未设置 `CODEX_HOME` 为前提。
@@ -141,6 +141,7 @@ supports_websockets = false
     ```
 
     如果 Codex 在执行项目命令时提示找不到 Bash，可安装 [Git for Windows](https://git-scm.com/downloads)，然后使用 Git Bash 或重新打开 PowerShell 后再试。
+
   </Tab>
 
   <Tab title="macOS">
@@ -181,6 +182,7 @@ supports_websockets = false
     ```
 
     也可以在 Finder 中按 `Command + Shift + G`，输入 `~/.codex` 打开配置目录。
+
   </Tab>
 
   <Tab title="Linux">
@@ -221,6 +223,7 @@ supports_websockets = false
     ```
 
     不建议使用 `sudo` 创建这些文件，否则文件可能归属于 `root`，导致普通用户启动 Codex 时无法读取或保存配置。
+
   </Tab>
 </Tabs>
 
@@ -234,15 +237,16 @@ supports_websockets = false
   codex
   ```
 
-  ```powershell Windows PowerShell theme={null}
-  Set-Location "C:\你的项目路径"
-  codex
-  ```
+```powershell Windows PowerShell theme={null}
+Set-Location "C:\你的项目路径"
+codex
+```
 
-  ```bat Windows CMD theme={null}
-  cd /d C:\你的项目路径
-  codex
-  ```
+```bat Windows CMD theme={null}
+cd /d C:\你的项目路径
+codex
+```
+
 </CodeGroup>
 
 在 Codex 中输入一个简单任务，例如“请回复：配置成功”。能够正常收到响应，说明 API 配置已生效。
