@@ -198,96 +198,28 @@ Upon a successful API call, a JSON object containing the image data will be retu
 
 ## 4. Common Sizes
 
-1. Square and Near-Square Ratios
+Custom image dimensions must meet all of the following requirements:
 
-1:1
+| Constraint | Requirement |
+| --- | --- |
+| Minimum total pixels | ≥ `655,360` |
+| Maximum total pixels | ≤ `8,294,400` |
+| Width and height | Both must be multiples of `16` |
+| Longest side | ≤ `3840` |
+| Long side ÷ short side | ≤ `3` |
 
-1K: 1024 × 1024
+All recommended sizes below meet these requirements:
 
-2K: 2048 × 2048
-
-4K: 4096 × 4096
-
-5:4
-
-1K: 1280 × 1024
-
-2K: 2000 × 1600 or 2080 × 1664
-
-4K: 4000 × 3200 or 4080 × 3264
-
-4:5
-
-1K: 1024 × 1280
-
-2K: 1600 × 2000 or 1664 × 2080
-
-4K: 3200 × 4000 or 3264 × 4080
-
-2. Traditional Classic Aspect Ratios
-
-4:3
-
-1K: 1024 × 768
-
-2K: 2048 × 1536
-
-4K: 3840 × 2880 or 4096 × 3072
-
-3:4
-
-1K: 768 × 1024
-
-2K: 1536 × 2048
-
-4K: 2880 × 3840 or 3072 × 4096
-
-3:2
-
-1K: 1152 × 768
-
-2K: 2160 × 1440
-
-4K: 3840 × 2560 or 4080 × 2720
-
-2:3
-
-1K: 768 × 1152
-
-2K: 1440 × 2160
-
-4K: 2560 × 3840 or 2720 × 4080
-
-3. Widescreen and Ultrawide Aspect Ratios
-
-16:9
-
-1K: 1024 × 576
-
-2K: 2048 × 1152
-
-4K: 3840 × 2160 (Note: Standard 4K UHD perfectly satisfies 16:9 and both width and height are multiples of 16)
-
-9:16
-
-1K: 576 × 1024
-
-2K: 1152 × 2048
-
-4K: 2160 × 3840
-
-21:9 (Equivalent to the simplest integer ratio 7:3)
-
-1K: 1008 × 432 or 1120 × 480
-
-2K: 2016 × 864 or 2128 × 912
-
-4K: 3808 × 1632 or 4032 × 1728
-
-9:21 (equivalent to the simplest integer ratio 3:7)
-
-1K: 432 × 1008 or 480 × 1120
-
-2K: 864 × 2016 or 912 × 2128
-
-4K: 1632 × 3808 or 1728 × 4032
+| Aspect ratio | Small | Medium | Large |
+| --- | --- | --- | --- |
+| 1:1 | `1024 × 1024` | `2048 × 2048` | `2880 × 2880` |
+| 5:4 | `1280 × 1024` | `2000 × 1600` | `3200 × 2560` |
+| 4:5 | `1024 × 1280` | `1600 × 2000` | `2560 × 3200` |
+| 4:3 | `1024 × 768` | `2048 × 1536` | `3264 × 2448` |
+| 3:4 | `768 × 1024` | `1536 × 2048` | `2448 × 3264` |
+| 3:2 | `1152 × 768` | `2160 × 1440` | `3504 × 2336` |
+| 2:3 | `768 × 1152` | `1440 × 2160` | `2336 × 3504` |
+| 16:9 | `1280 × 720` | `2048 × 1152` | `3840 × 2160` |
+| 9:16 | `720 × 1280` | `1152 × 2048` | `2160 × 3840` |
+| 21:9 (simplified ratio: 7:3) | `1344 × 576` | `2016 × 864` | `3808 × 1632` |
+| 9:21 (simplified ratio: 3:7) | `576 × 1344` | `864 × 2016` | `1632 × 3808` |
