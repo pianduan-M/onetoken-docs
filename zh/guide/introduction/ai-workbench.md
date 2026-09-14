@@ -13,7 +13,7 @@ AI 智能工作台是一个**前端应用**，用于调用 OneToken 提供的 **
 
 > OneToken 的角色：**大模型 API 中转站**（注册、计费、生成 API Key、选择模型等）  
 > AI 智能工作台的角色：**网页工作台**（使用你的 OneToken API Key 发起调用并展示结果）  
-> 入口：**https://ai.onetoken.one/**
+> 入口：**https://chat.onetoken.one/**
 
 ---
 
@@ -43,7 +43,7 @@ AI 智能工作台是一个**前端应用**，用于调用 OneToken 提供的 **
 
 ## 3. 登录 AI 智能工作台
 
-1. 打开工作台：**https://ai.onetoken.one/**
+1. 打开工作台：**https://chat.onetoken.one/**
 2. 使用你的 OneToken 账号登录（如页面支持一键登录/授权则按提示操作）
 3. 登录后可在左下角看到账号信息与余额区域（示例：余额、刷新余额等）
 
@@ -224,7 +224,7 @@ AI 智能工作台是一个**前端应用**，用于调用 OneToken 提供的 **
 
 1. 注册/登录 OneToken
 2. 创建并复制 API Key
-3. 打开 https://ai.onetoken.one/ 登录
+3. 打开 https://chat.onetoken.one/ 登录
 4. 在 **后台管理/设置** 粘贴 Key 并保存
 5. 回到 **AI 对话**，选择模型，发一句：“你好，帮我写一段产品介绍。”
 6. 继续体验 **AI 绘画 / AI 视频**

@@ -13,7 +13,7 @@ The AI workbench is a **web app** that uses your OneToken **LLM API key** to:
 
 > OneToken: **API relay** (sign up, billing, API keys, model selection).  
 > AI workbench: **browser UI** (calls with your key and shows results).  
-> Open: **https://ai.onetoken.one/**
+> Open: **https://chat.onetoken.one/**
 
 ---
 
@@ -41,7 +41,7 @@ The AI workbench is a **web app** that uses your OneToken **LLM API key** to:
 
 ## 3. Log in to the workbench
 
-1. Open **https://ai.onetoken.one/**
+1. Open **https://chat.onetoken.one/**
 2. Sign in with your OneToken account (use one-click login if offered).
 3. After login, check balance in the lower-left area.
 
@@ -222,7 +222,7 @@ Tips:
 
 1. Sign up / log in to OneToken
 2. Create and copy an API key
-3. Open https://ai.onetoken.one/ and sign in
+3. Open https://chat.onetoken.one/ and sign in
 4. In **admin / settings**, paste the key if prompted and save
 5. In **AI chat**, pick a model and send: “Hi, write a short product blurb.”
 6. Try **AI image** and **AI video**
