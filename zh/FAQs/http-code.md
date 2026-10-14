@@ -3,30 +3,59 @@ title: HTTP 状态码总览
 icon: code-compare
 ---
 
-> 关键错误代码映射表
+调用 API 时，先查看 HTTP 状态码，再结合响应中的 `error.message` 和 `error.code` 定位问题。同一个状态码可能有不同原因；错误消息和错误体结构也可能因接口或上游模型提供方而异。
+
+## 常见状态码
+
+| 状态码 | 含义与常见原因 | 建议处理方式 |
+| --- | --- | --- |
+| `200 OK` | 请求成功。流式请求建立连接时也可能返回 `200`。 | 读取响应内容；流式调用还需处理后续数据和中途错误。 |
+| `201 Created`、`202 Accepted`、`204 No Content` | 分别表示资源已创建、异步任务已受理、请求成功但没有响应体；是否使用取决于具体接口。 | 按对应接口文档读取资源、查询任务或结束处理，不要假设一定有 JSON 响应体。 |
+| `400 Bad Request` | 请求体、参数或模型参数无效。部分 `400` 错误由上游透传。 | 检查 JSON、必填字段、参数取值和模型支持范围；根据 `error.message` 修正请求。 |
+| `401 Unauthorized` | 缺少、无效或已失效的 API Key。 | 检查 `Authorization: Bearer <API_KEY>`，并确认密钥有效。不要通过重复请求解决认证错误。 |
+| `402 Payment Required` | 部分接口或上游可能用此状态表示余额或额度不足。 | 检查账户余额、订阅和令牌额度；以当前接口返回的状态码和错误内容为准。 |
+| `403 Forbidden` | 账户、分组、模型、令牌或来源 IP 无访问权限；也可能是账户余额或订阅额度不足。 | 根据 `error.code` 和消息检查权限、允许的 IP、余额及额度。`insufficient_user_quota` 表示额度不足。 |
+| `404 Not Found` | 路径或资源不存在；部分上游也可能用它报告模型不存在。 | 核对请求路径、资源 ID 和模型名称。无可用模型渠道时，网关也可能返回 `503`。 |
+| `408 Request Timeout`、`504 Gateway Timeout` | 请求处理或上游响应超时。 | 检查客户端超时设置；重试前确认任务是否已创建，避免重复提交。 |
+| `413 Content Too Large` | 请求体超过接口允许的大小。 | 缩小文件或请求体，查看对应接口的大小限制。 |
+| `422 Unprocessable Content` | 部分接口或上游接受了请求格式，但无法处理其内容，例如输入未通过校验。 | 按错误消息调整输入；具体规则以对应接口为准。 |
+| `429 Too Many Requests` | 请求触发平台、模型或上游的频率限制。 | 如果响应带有 `Retry-After`，先按其提示等待；否则降低请求速率并采用指数退避。 |
+| `500 Internal Server Error` | 服务端处理失败。 | 稍后有限次数重试；持续失败时提供请求 ID 和调用时间。 |
+| `502 Bad Gateway` | 网关或上游返回异常。 | 稍后有限次数重试，并检查上游服务状态。 |
+| `503 Service Unavailable` | 当前分组下没有可用模型渠道，或上游服务暂时不可用、被限速。 | 先核对模型名称和分组权限；若是临时限速或故障，稍后重试。 |
 
 <Note>
-  * 400 状态码通常是传参错误，请查看接口文档。大部分 400 错误是上游透传的报错。
-  * 错误响应中的 response ID 已更改为 tid (traceId)，用于错误追踪和问题定位。
+  `403` + `insufficient_user_quota` 是当前网关对账户余额或订阅额度不足的常见返回。某些接口文档和上游示例使用 `402`；请以实际 HTTP 状态码及错误内容判断。
 </Note>
 
-| HTTP 状态码 | 错误标识符              | 错误消息                                                       | 常见原因                 | 英文错误消息                                                                                              |
-| ----------- | ----------------------- | -------------------------------------------------------------- | ------------------------ | --------------------------------------------------------------------------------------------------------- |
-| 503         | -                       | 模型名字错误请求进入模型广场查看或当前分组下对于模型无使用权限 | 没有可用的渠道处理请求   | Incorrect model ID. Please request to view the model page or you do not have permission to use this model |
-| 503         | -                       | 该模型遇到官方限速，联系客服增加并发或请稍后重试               | 模型遇到官方限速         | Rate limited by provider – contact support to request higher concurrency or try again later.              |
-| 429         | -                       | 请求频率超过限制                                               | 请求频率超过限制         | The xx（xx: model id） model Too many requests; please try again later.                                   |
-| 403         | insufficient_user_quota | 用户余额不足，需要充值                                         | 用户余额不足，需要充值   | Your account balance is insufficient. Please recharge your account to continue using the API.             |
-| 403         | -                       | 用户已被封禁                                                   | 用户状态被禁用或在黑名单 | Account suspended.                                                                                        |
-| 403         | -                       | 无权进行此操作，权限不足                                       | 用户角色权限不够         | Forbidden – insufficient permissions.                                                                     |
-| 403         | -                       | 该令牌只能在指定网段使用                                       | IP 不在令牌允许的网段内  | Forbidden – key(请求的 key 后六位) allowed only from approved IP ranges.                                  |
-| 403         | -                       | 该令牌无权使用模型                                             | 令牌不支持请求的模型     | Forbidden – key(请求的 key 后六位) not authorized to access the requested model.                          |
-| 403         | -                       | 普通用户不支持指定渠道                                         | 非管理员用户尝试指定渠道 | Key error；(请求的 key 后六位)                                                                            |
-| 403         | -                       | 该渠道已被禁用                                                 | 渠道状态为禁用           | Forbidden – channel has been disabled.                                                                    |
-| 401         | -                       | 无权进行此操作，未登录且未提供 access token                    | 未提供 Authorization 头  | Unauthorized – no access token supplied; please log in and include a valid token.                         |
-| 401         | -                       | 无权进行此操作，access token 无效                              | access token 验证失败    | Unauthorized – access token is invalid or expired.                                                        |
-| 400         | -                       | 无效的渠道 Id                                                  | 渠道 ID 格式错误或不存在 | Bad Request – invalid channel ID.                                                                         |
-| 400         | prompt_missing          | prompt is required                                             | 图片生成缺少提示词       | prompt is required                                                                                        |
-| 400         | prompt_too_long         | prompt is too long                                             | 提示词超过长度限制       | prompt is too long                                                                                        |
-| 400         | text_too_long           | input is too long                                              | 音频输入文本过长         | input is too long                                                                                         |
-| 400         | size_not_supported      | size not supported                                             | 图片尺寸不被模型支持     | size not supported                                                                                        |
-| 400         | n_not_within_range      | invalid value of n                                             | n 参数值不在有效范围     | invalid value of n                                                                                        |
+## 常见错误标识符
+
+`error.code` 用于进一步区分原因，但不保证每次都有值。上游透传错误可能使用其他标识符或响应结构。
+
+| HTTP 状态码 | `error.code` | 常见原因与处理方式 |
+| --- | --- | --- |
+| `403` | `insufficient_user_quota` | 账户余额或订阅额度不足；充值、调整订阅或检查令牌额度。 |
+| `403` | `access_denied` | 令牌限制了来源 IP；检查允许的 IP 或网段。 |
+| `503` | `model_not_found` | 模型名称无效，或当前分组没有可用渠道；核对[模型广场](https://onetoken.one/pricing)中的名称和分组权限。 |
+| `400` | `prompt_missing`、`prompt_too_long` | 部分图片接口缺少提示词，或提示词过长；检查对应接口的参数限制。 |
+| `400` | `text_too_long` | 部分音频接口的输入文本过长；缩短输入。 |
+| `400` | `size_not_supported` | 部分图片接口不支持请求的尺寸；改用模型支持的尺寸。 |
+| `400` | `n_not_within_range` | 部分接口的 `n` 超出允许范围；调整生成数量。 |
+
+## 错误响应与排查
+
+OpenAI 兼容接口的错误通常位于 `error` 对象中，例如：
+
+```json
+{
+  "error": {
+    "message": "... (request id: <request-id>)",
+    "type": "new_api_error",
+    "code": "model_not_found"
+  }
+}
+```
+
+排查时记录 HTTP 状态码、`error.code`、`error.message`、请求时间和模型名称，并保留响应头中的 `X-Oneapi-Request-Id`（如有）。Claude 原生接口或上游透传错误可能使用不同的响应结构与请求 ID 字段。向客服反馈时不要发送完整 API Key、提示词或其他敏感数据。
+
+仅对临时性错误（如 `429`、`500`、`502`、`503`、`504`）进行有限次数重试。`503` 且 `error.code` 为 `model_not_found` 时，应先核对模型和分组，而不是直接重试。对于图片、视频等可能创建任务或产生费用的请求，先查询任务状态，再决定是否重试；`400`、`401`、权限不足及额度不足应先修正原因。
