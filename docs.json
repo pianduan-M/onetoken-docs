@@ -36,6 +36,18 @@
                 ]
               },
               {
+                "group": "基础 API",
+                "expanded": true,
+                "pages": [
+                  {
+                    "group": "OpenAI API 调用",
+                    "pages": [
+                      "zh/basics/openai/webSearch"
+                    ]
+                  }
+                ]
+              },
+              {
                 "group": "图片",
                 "expanded": true,
                 "pages": [
@@ -186,6 +198,18 @@
                   "en/guide/introduction/category-table",
                   "en/guide/introduction/group-price",
                   "en/guide/introduction/new-token"
+                ]
+              },
+              {
+                "group": "Basic API",
+                "expanded": true,
+                "pages": [
+                  {
+                    "group": "OpenAI API",
+                    "pages": [
+                      "en/basics/openai/webSearch"
+                    ]
+                  }
                 ]
               },
               {
