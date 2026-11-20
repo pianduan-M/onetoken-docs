@@ -1,0 +1,68 @@
+---
+title: 通过 API 查询账户余额
+---
+
+调用 `GET /api/user/self`，从响应的 `data.quota` 读取账户的钱包剩余额度。它不是单个 API 密钥的剩余额度，也不包含订阅套餐的剩余额度。
+
+## 获取访问令牌
+
+1. 登录要查询的账户，点击控制台右上角的头像，进入 **个人资料**。
+2. 在 **安全** → **访问令牌** 中生成并复制令牌。部分版本的入口为 **个人设置** → **系统访问令牌**。
+
+请使用账户的访问令牌，不要使用调用模型的 `sk-` API 密钥。不要将访问令牌提交到代码仓库、放进前端代码或写入日志。
+
+## 发起请求
+
+将 `BASE_URL` 设为站点的根地址，不带 `/v1` 或 `/api`。运行下面的命令，按提示粘贴访问令牌并回车。终端不会显示输入的令牌。
+
+```bash
+BASE_URL=https://onetoken.one
+printf '请输入账户访问令牌：'
+read -r -s ACCESS_TOKEN
+printf '\n'
+
+curl -sS "${BASE_URL%/}/api/user/self" \
+  -H "Authorization: Bearer ${ACCESS_TOKEN}"
+```
+
+如果响应提示缺少 `New-Api-User`，从 **个人资料** 中查看令牌所属账户的数字用户 ID，将下面的 `12345` 替换为该 ID，再发起请求：
+
+```bash
+USER_ID=12345
+curl -sS "${BASE_URL%/}/api/user/self" \
+  -H "Authorization: Bearer ${ACCESS_TOKEN}" \
+  -H "New-Api-User: ${USER_ID}"
+```
+
+## 读取余额
+
+成功响应示例（仅保留相关字段）：
+
+```json
+{
+  "success": true,
+  "message": "",
+  "data": {
+    "quota": 1250000,
+    "used_quota": 250000
+  }
+}
+```
+
+先确认 `success` 为 `true`，再读取 `data.quota`。它是已经扣除消耗后的剩余额度，不需要再减去累计消耗 `data.used_quota`。
+
+如果需要换算为美元，调用同一站点的 `GET /api/status`，读取 `data.quota_per_unit`。下面的命令使用 `jq` 提取该字段：
+
+```bash
+curl -sS "${BASE_URL%/}/api/status" | jq '.data.quota_per_unit'
+```
+
+美元余额 = `data.quota` ÷ `quota_per_unit`。例如，站点返回 `quota_per_unit: 500000` 时，`1250000` 配额等于 `$2.50`。不要写死换算系数；如果控制台显示人民币、自定义单位或原始配额，请以站点的显示设置为准。
+
+## 排查请求失败
+
+- **返回 `401` 或提示令牌无效**：确认使用的是同一站点的账户访问令牌，且令牌未过期或被撤销。如果提示缺少 `New-Api-User` 或 ID 不匹配，请检查旧版请求的用户 ID。
+- **返回 `403` 或提示权限不足**：如果站点支持为访问令牌配置权限，确认该令牌允许读取个人资料。
+- **返回 `404` 或 HTML 页面**：检查站点根地址和请求路径是否正确。余额接口是 `/api/user/self`，不是 `/v1/api/user/self`。
+
+即使 HTTP 状态码为 `200`，若 `success` 为 `false`，也应查看响应的 `message`，不要把查询失败当成余额为零。
