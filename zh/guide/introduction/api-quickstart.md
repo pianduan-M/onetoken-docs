@@ -18,19 +18,24 @@ icon: rocket
 
 ### 2. 接口配置
 
-#### BASE_URL 可选地址
-
-```
-https://onetoken.one
-https://onetoken.one/v1
-https://onetoken.one/v1/chat/completions
-```
-
-> **注意**: 不同客户端可能需要使用不同的 BASE_URL，建议依次尝试以上地址
+- 使用 OpenAI SDK 调用 Chat Completions 或 Responses 时，将 `BASE_URL` 设为 `https://onetoken.one/v1`。
+- 使用 Anthropic SDK 调用 Claude Messages 时，将 `BASE_URL` 设为 `https://onetoken.one`。
+- 使用 cURL、Postman 或要求填写完整接口地址的客户端时，将 `https://onetoken.one` 与下表中的请求路径拼接。
 
 ### 3. 模型选择
 
 - 模型名称位于首页 -> "支持模型"列表的第一列
+
+#### 按模型选择调用协议
+
+| 厂商 / 模型 | 推荐协议 | HTTP 请求路径 |
+| --- | --- | --- |
+| OpenAI GPT（新接入） | OpenAI Responses | `POST /v1/responses` |
+| Anthropic Claude | [Claude Messages](/zh/api/texts/general/claude-messages) | `POST /v1/messages` |
+| Google Gemini | Gemini 原生 `generateContent` | `POST /v1beta/models/{model}:generateContent` |
+| DeepSeek、通义千问（Qwen）、智谱 GLM、MiniMax | [OpenAI Chat Completions](/zh/api/texts/general/chat-completions) | `POST /v1/chat/completions` |
+
+已有 Chat Completions 集成，或希望用同一套请求格式切换多个厂商时，可以继续使用 OpenAI Chat Completions。调用前请在模型详情中核对支持的接口类型。 [OneToken 模型广场](https://onetoken.one/pricing)
 
 ## 测试验证
 
@@ -39,11 +44,11 @@ https://onetoken.one/v1/chat/completions
 1. 在聊天页面进行在线测试
 2. 使用 API 工具（如 Postman）进行接口测试
 
-### 配置示例
+### OpenAI Chat Completions 配置示例
 
 ```json
 {
-  "base_url": "https://onetoken.one",
+  "base_url": "https://onetoken.one/v1",
   "api_key": "your_token_here",
   "model": "selected_model_name"
 }
